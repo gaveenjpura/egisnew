@@ -7,12 +7,15 @@ app.directive('mapCanvas', function () {
                 center: new google.maps.LatLng(7.0008, 80.7733)
             };
             var map = new google.maps.Map(element[0], mapOptions);
-            var marker = new google.maps.Marker({
-                position: mapOptions.center,
-                animation: google.maps.Animation.BOUNCE
-            });
-            marker.setMap(map);
-
+            var branch_locations = [['kurunegala', 7.4730, 80.3547], ['kandy', 7.2906, 80.6337], ['galle', 6.0535, 80.2210],
+                ['ratnapura', 6.7056, 80.3847], ['chilaw', 7.5620, 79.8017], ['dambulla', 7.8742, 80.6511]];
+            for (i = 0; i < branch_locations.length; i++) {
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(branch_locations[i][1], branch_locations[i][2]),
+                    animation: google.maps.Animation.BOUNCE
+                });
+                marker.setMap(map);
+            }
         }
     };
 });
