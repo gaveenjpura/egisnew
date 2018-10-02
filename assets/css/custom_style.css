@@ -1,0 +1,43 @@
+.header ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.header ul li {
+    float: left;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.about_us_page {
+    padding-top: 50px;
+}
+
+.about_us_page .title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.about_us_page .content {
+    font-size: 18px;
+    color: #666666;
+}
+
+.about_us_page .content p {
+    margin-top: 15px;
+    text-align: justify;
+}
+
+.about_us_page .described-image {
+    width: 50%;
+    margin-bottom: 30px;
+}
+.about_us_page .branches_container{
+    margin-bottom: 15px;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html ng-app="Ski">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8"/>
+    <meta name="description" content="gis and ecommerce">
+    <meta name="keywords" content="gis,ecommerce">
+    <meta name="author" content="gaveen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Plunker</title>
+    <!--bootstrap files-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.css">
+    <!--end-->
+    <!--css files-->
+    <link rel="stylesheet" href="style.css"/>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="assets/css/custom_style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+    <!--end-->
+    <!--internal styles-->
+    <style>
+        #nav {
+            margin-bottom: 10px;
+        }
+
+        .panel {
+            border: 10px solid #333;
+            background: #ccc;
+            height: 200px;
+            margin: 10px;
+            font-size: 72px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+    <!--end-->
+    <!--for mobile apps-->
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!--end-->
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+          rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <!-- js -->
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.slick/1.3.13/slick.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.slick/1.3.13/slick.css"/>
+    <script>
+        $(function () {
+            var $panel = $('<div class="panel">13</div>');
+            var slickOpts = {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                dots: true,
+                prevArrow: '.btn-prev',
+                nextArrow: '.btn-next',
+                autoplay: true
+            };
+            var slickOpts_popular = {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                dots: true,
+                prevArrow: '.btn-prev_popular',
+                nextArrow: '.btn-next_popular',
+                autoplay: true
+            };
+            // Init the slick
+            $('#dashboard').slick(slickOpts);
+            $('#dashboard-popular').slick(slickOpts_popular);
+            var slickEnabled = true;
+
+            // Add panel
+            $('.btn-add').on('click', function () {
+                $('#dashboard').slickAdd($panel);
+            });
+
+
+            // Slick/Unslick
+            $('.btn-unslick').on('click', function (e) {
+                if (slickEnabled) {
+                    $('#dashboard').unslick();
+                    $(this).text('Slick');
+                    slickEnabled = false;
+                } else {
+                    $('#dashboard').slick(slickOpts);
+                    $(this).text('Unslick');
+                    slickEnabled = true;
+                }
+            });
+
+            // Re-slick
+            $('.btn-slick').on('click', function () {
+                $('#dashboard').slick(slickOpts);
+            });
+        });
+    </script>
+    <!-- js -->
+    <!--jquery-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-select.js"></script>
+    <script>
+        $(document).ready(function () {
+            var mySelect = $('#first-disabled2');
+
+            $('#special').on('click', function () {
+                mySelect.find('option:selected').prop('disabled', true);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#special2').on('click', function () {
+                mySelect.find('option:disabled').prop('disabled', false);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#basic2').selectpicker({
+                liveSearch: true,
+                maxOptions: 1
+            });
+        });
+    </script>
+    <script type="text/javascript" src="assets/js/jquery.leanModal.min.js"></script>
+    <link href="assets/css/jquery.uls.css" rel="stylesheet"/>
+    <link href="assets/css/jquery.uls.grid.css" rel="stylesheet"/>
+    <link href="assets/css/jquery.uls.lcd.css" rel="stylesheet"/>
+    <!-- Source -->
+    <script src="assets/js/jquery.uls.data.js"></script>
+    <script src="assets/js/jquery.uls.data.utils.js"></script>
+    <script src="assets/js/jquery.uls.lcd.js"></script>
+    <script src="assets/js/jquery.uls.languagefilter.js"></script>
+    <script src="assets/js/jquery.uls.regionfilter.js"></script>
+    <script src="assets/js/jquery.uls.core.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.uls-trigger').uls({
+                onSelect: function (language) {
+                    var languageName = $.uls.data.getAutonym(language);
+                    $('.uls-trigger').text(languageName);
+                },
+                quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+            });
+        });
+    </script>
+    <!--end-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbMnH8NLQ-689cNuQyVqrLHLhzAYzu0g4"></script>
+    <script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.6/angular.js"
+            data-semver="1.3.6"></script>
+    <script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.6/angular-route.js"
+            data-semver="1.3.6"></script>
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+    <script src="app/directives/mapDirective.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><span>E</span>GIS</a>
+        </div>
+        <div class="header-right">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="#">Product Delivery</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div ng-view></div>
+<!--footer section start-->
+<footer>
+    <div class="footer-bottom text-center">
+        <div class="container">
+            <div class="footer-logo">
+                <a href="index.html"><span>E</span>GIS</a>
+            </div>
+            <div class="footer-social-icons">
+                <ul>
+                    <li><a class="facebook" href="#"><span>Facebook</span></a></li>
+                    <li><a class="twitter" href="#"><span>Twitter</span></a></li>
+                    <li><a class="flickr" href="#"><span>Flickr</span></a></li>
+                    <li><a class="googleplus" href="#"><span>Google+</span></a></li>
+                    <li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</footer>
+<!--footer section end-->
+</body>
+</html>
