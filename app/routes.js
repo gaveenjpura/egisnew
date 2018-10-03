@@ -17,6 +17,9 @@ app.config(function($routeProvider,$locationProvider, $httpProvider) {
         .when('/contact', {
             templateUrl: 'app/views/pages/contact.html'
         })
+        .when('/delivery', {
+            templateUrl: 'app/views/pages/delivery.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
