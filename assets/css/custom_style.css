@@ -38,6 +38,30 @@
     width: 50%;
     margin-bottom: 30px;
 }
-.about_us_page .branches_container{
+
+.about_us_page .branches_container {
     margin-bottom: 15px;
+}
+
+.contact_page .branch-item .title h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.contact_page .branch-item {
+    margin-top: 15px;
+}
+
+.contact_page .branch-item .content .detail-container .symbol {
+    font-size: 30px;
+}
+
+.contact_page .branch-item .content .detail-container {
+    margin-top: 15px;
+}
+
+.contact_page .branch-item .content .detail-container .symbol-description {
+    font-size: 18px;
+    color: #666666;
 }
