@@ -20,6 +20,9 @@ app.config(function($routeProvider,$locationProvider, $httpProvider) {
         .when('/delivery', {
             templateUrl: 'app/views/pages/delivery.html'
         })
+        .when('/login', {
+            templateUrl: 'app/views/pages/login.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

@@ -1,3 +1,12 @@
+body {
+    background-image: url(https://360.lk/bg_pattern.7e1951618b2c1961188b.png);
+    background-repeat: repeat;
+}
+
+button {
+    border-radius: 5px !important;
+}
+
 .header ul {
     list-style: none;
     padding-left: 0px;
@@ -73,22 +82,63 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
-.delivery-page .question-item-container{
+
+.delivery-page .question-item-container {
     margin-bottom: 50px;
     margin-top: 30px;
 }
+
 .delivery-page .question-item-container .question .text {
     font-weight: bold;
 }
-.delivery-page .question-item-container .answer{
+
+.delivery-page .question-item-container .answer {
     margin-top: 10px;
 }
-.delivery-page .question-item-container .answer ul{
+
+.delivery-page .question-item-container .answer ul {
     padding-top: 10px;
 }
-.delivery-page .question-item-container .answer ul li{
+
+.delivery-page .question-item-container .answer ul li {
     margin-bottom: 10px;
 }
+
 .delivery-page .question-item-container .answer .text {
 
+}
+
+.login_page {
+    min-height: 375px;
+}
+
+.login_page .login-secondary-container .title-container h2 {
+    text-align: center;
+}
+
+.login_page .button-container {
+    text-align: center;
+}
+
+.login_page .button-container button {
+    width: 150px;
+}
+
+.login_page .login-secondary-container .title-container {
+    margin-top: 50px;
+}
+
+.login_page .login-secondary-container input[type="text"] {
+    margin-top: 10px;
+}
+
+.login_page .login-secondary-container input[type="password"] {
+    margin-top: 10px;
+}
+.login_page .login-secondary-container input[type="email"] {
+    margin-top: 10px;
+}
+
+.login_page .login-secondary-container input[type="checkbox"] {
+    margin-left: 0px;
 }
