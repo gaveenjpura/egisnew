@@ -23,6 +23,9 @@ app.config(function($routeProvider,$locationProvider, $httpProvider) {
         .when('/login', {
             templateUrl: 'app/views/pages/login.html'
         })
+        .when('/register', {
+            templateUrl: 'app/views/pages/register.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

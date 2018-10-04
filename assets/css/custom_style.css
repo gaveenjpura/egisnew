@@ -135,10 +135,24 @@ button {
 .login_page .login-secondary-container input[type="password"] {
     margin-top: 10px;
 }
+
 .login_page .login-secondary-container input[type="email"] {
     margin-top: 10px;
 }
 
 .login_page .login-secondary-container input[type="checkbox"] {
     margin-left: 0px;
+}
+.register_page{
+    margin-bottom: 20px;
+}
+.register_page .register-secondary-container .title-container h2 {
+    text-align: center;
+}
+.register_page .button-container {
+    text-align: center;
+}
+
+.register_page .button-container button {
+    width: 150px;
 }
