@@ -1,4 +1,4 @@
-<div class="register_page">
+<div class="register_page" ng-controller="registerPageController">
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
@@ -48,14 +48,14 @@
                                 <div class="row" style="padding-right:15px;">
                                     <label for="latitude">Latitude of Residence</label>
                                     <input type="text" class="form-control" id="latitude" placeholder="Latitude"
-                                           name="latitude">
+                                           name="latitude" ng-model="lat">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="row" style="padding-left:15px;">
                                     <label for="latitude">Longitude of Residence</label>
                                     <input type="text" class="form-control" id="longitude" placeholder="Longitude"
-                                           name="longitude">
+                                           name="longitude" ng-model="lon">
                                 </div>
                             </div>
                         </div>
@@ -71,9 +71,8 @@
                                    name="confirm_password">
                         </div>
                         <div class="button-container">
-                            <button type="button" class="btn btn-success">SUBMIT</button>
+                            <button type="button" class="btn btn-success" ng-click="nearme()">SUBMIT</button>
                         </div>
-
                     </div>
                 </div>
             </div>
