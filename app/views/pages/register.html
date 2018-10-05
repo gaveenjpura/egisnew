@@ -48,23 +48,24 @@
                                 <div class="row" style="padding-right:15px;">
                                     <label for="latitude">Latitude of Residence</label>
                                     <input type="text" class="form-control" id="latitude" placeholder="Latitude"
-                                           name="latitude" ng-model="lat">
+                                           name="latitude" ng-model="obj.prop1">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="row" style="padding-left:15px;">
                                     <label for="latitude">Longitude of Residence</label>
                                     <input type="text" class="form-control" id="longitude" placeholder="Longitude"
-                                           name="longitude" ng-model="lon">
+                                           name="longitude" ng-model="obj.prop2">
                                 </div>
                             </div>
                         </div>
                         <div class="button-container">
-                            <button type="button" class="btn btn-default show-map-btn">SHOW AND EDIT LOCATION ON MAP
+                            <button type="button" class="btn btn-default show-map-btn" ng-click="editMapClick()">CLICK
+                                TO SHOW AND EDIT LOCATION ON MAP THEN CLICK AGAIN TO SYNCHRONIZE
                             </button>
                         </div>
                         <div class="edit-map-container">
-                            <map-dir id="map" location="myWelcome" ng-if="show_map"></map-dir>
+                            <map-dir id="map" location="obj" ng-if="show_map"></map-dir>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>

@@ -157,7 +157,12 @@ button {
     width: 150px;
 }
 .register_page .show-map-btn {
-    width: 270px !important;
+    width: 455px !important;
     background-color: darkkhaki;
     margin-top: 15px;
+    font-size: 11px;
+}
+.register_page .edit-map-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
