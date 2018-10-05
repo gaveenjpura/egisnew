@@ -146,6 +146,9 @@ button {
 .register_page{
     margin-bottom: 20px;
 }
+.register_page .register-secondary-container .title-container{
+    margin-top: 20px;
+}
 .register_page .register-secondary-container .title-container h2 {
     text-align: center;
 }
