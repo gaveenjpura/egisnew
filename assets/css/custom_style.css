@@ -156,3 +156,8 @@ button {
 .register_page .button-container button {
     width: 150px;
 }
+.register_page .show-map-btn {
+    width: 270px !important;
+    background-color: darkkhaki;
+    margin-top: 15px;
+}
