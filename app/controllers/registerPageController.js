@@ -1,4 +1,6 @@
 app.controller('registerPageController', function ($scope, $http) {
+    $scope.user_types=["select user type","buyer","seller"];
+    $scope.user=$scope.user_types[0];
     $scope.show_map = false;
     $scope.obj = {
         prop1:"",
