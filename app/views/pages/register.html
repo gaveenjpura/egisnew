@@ -11,12 +11,12 @@
                         <div class="form-group">
                             <label for="first_name">First Name</label>
                             <input type="text" class="form-control" id="first_name" placeholder="First Name"
-                                   name="first_name">
+                                   name="first_name" ng-model="first_name">
                         </div>
                         <div class="form-group">
                             <label for="last_name">Last Name</label>
                             <input type="text" class="form-control" id="last_name" placeholder="Last Name"
-                                   name="last_name">
+                                   name="last_name" ng-model="last_name">
                         </div>
                         <div class="form-group">
                             <label for="user_type">User Type</label>
@@ -26,32 +26,32 @@
                         <div class="form-group">
                             <label for="phone_number">Date of Birth</label>
                             <input type="date" class="form-control" id="dob" placeholder="Date of Birth"
-                                   name="dob">
+                                   name="dob" ng-model="dob">
                         </div>
                         <div class="form-group">
                             <label for="phone_number">Phone Number</label>
-                            <input type="text" class="form-control" id="phone_number" placeholder="Phone Number"
-                                   name="phone_number">
+                            <span>(+94)</span><input type="text" class="form-control" id="phone_number" placeholder="Phone Number"
+                                   name="phone_number" ng-model="phone_number">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email"
-                                   name="email">
+                            <input type="text" class="form-control" id="email" placeholder="Email"
+                                   name="email" ng-model="email">
                         </div>
                         <div class="form-group">
                             <label for="address_line_1">Address Line 1</label>
                             <input type="text" class="form-control" id="address_line_1" placeholder="Address Line 1"
-                                   name="address_line_1">
+                                   name="address_line_1" ng-model="add_line_1">
                         </div>
                         <div class="form-group">
                             <label for="address_line_2">Address Line 2</label>
                             <input type="text" class="form-control" id="address_line_2" placeholder="Address Line 2"
-                                   name="address_line_2">
+                                   name="address_line_2" ng-model="add_line_2">
                         </div>
                         <div class="form-group">
                             <label for="address_line_3">Address Line 3</label>
                             <input type="text" class="form-control" id="address_line_3" placeholder="Address Line 3"
-                                   name="address_line_3">
+                                   name="address_line_3" ng-model="add_line_3">
                         </div>
                         <div class="coordinats-container clearfix">
                             <div class="col-md-6">
@@ -80,21 +80,21 @@
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="username" placeholder="Username"
-                                   name="username">
+                                   name="username" ng-model="username">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="Password"
-                                   name="password">
+                                   name="password" ng-model="password">
                         </div>
                         <div class="form-group">
                             <label for="confirm_password">Confirm Password</label>
                             <input type="password" class="form-control" id="confirm_password"
                                    placeholder="Confirm Password"
-                                   name="confirm_password">
+                                   name="confirm_password" ng-model="confirm_password">
                         </div>
                         <div class="button-container">
-                            <button type="button" class="btn btn-success" ng-click="nearme()">SUBMIT</button>
+                            <button type="button" class="btn btn-success" ng-click="formValidation()">SUBMIT</button>
                         </div>
                     </div>
                 </div>

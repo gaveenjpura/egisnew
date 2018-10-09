@@ -143,15 +143,19 @@ button {
 .login_page .login-secondary-container input[type="checkbox"] {
     margin-left: 0px;
 }
-.register_page{
+
+.register_page {
     margin-bottom: 20px;
 }
-.register_page .register-secondary-container .title-container{
+
+.register_page .register-secondary-container .title-container {
     margin-top: 20px;
 }
+
 .register_page .register-secondary-container .title-container h2 {
     text-align: center;
 }
+
 .register_page .button-container {
     text-align: center;
 }
@@ -159,13 +163,19 @@ button {
 .register_page .button-container button {
     width: 150px;
 }
+
 .register_page .show-map-btn {
     width: 455px !important;
     background-color: darkkhaki;
     margin-top: 15px;
     font-size: 11px;
 }
-.register_page .edit-map-container{
+
+.register_page .edit-map-container {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.error-msg-container .error-msg {
+    color: red;
 }
