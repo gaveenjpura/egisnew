@@ -179,3 +179,7 @@ button {
 .error-msg-container .error-msg {
     color: red;
 }
+
+.register_page .register-submit-btn {
+    margin-top: 10px;
+}

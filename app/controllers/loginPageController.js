@@ -1,6 +1,7 @@
 app.controller('loginPageController', function ($scope) {
     $scope.email = "";
     $scope.password = "";
+    var error_flag = 0;
     $scope.loginValidator = function () {
         $scope.error_msg = "";
         if ($scope.email.length != 0 && $scope.password.length != 0) {

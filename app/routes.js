@@ -26,6 +26,9 @@ app.config(function($routeProvider,$locationProvider, $httpProvider) {
         .when('/register', {
             templateUrl: 'app/views/pages/register.html'
         })
+        .when('/user_profile', {
+            templateUrl: 'app/views/pages/user_profile.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

@@ -30,8 +30,9 @@
                         </div>
                         <div class="form-group">
                             <label for="phone_number">Phone Number</label>
-                            <span>(+94)</span><input type="text" class="form-control" id="phone_number" placeholder="Phone Number"
-                                   name="phone_number" ng-model="phone_number">
+                            <span>(+94)</span><input type="text" class="form-control" id="phone_number"
+                                                     placeholder="Phone Number"
+                                                     name="phone_number" ng-model="phone_number">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -93,8 +94,13 @@
                                    placeholder="Confirm Password"
                                    name="confirm_password" ng-model="confirm_password">
                         </div>
+                        <div class="error-msg-container">
+                            <span class="error-msg">
+                              {{error_msg}}
+                            </span>
+                        </div>
                         <div class="button-container">
-                            <button type="button" class="btn btn-success" ng-click="formValidation()">SUBMIT</button>
+                            <button type="button" class="btn btn-success register-submit-btn" ng-click="formValidation()">SUBMIT</button>
                         </div>
                     </div>
                 </div>
