@@ -356,7 +356,7 @@ span.active.uls-trigger {
 }
 
 .focus-layout:hover {
-    background-color: #01a185;
+    background-color:chocolate;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
