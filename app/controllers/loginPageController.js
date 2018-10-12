@@ -31,7 +31,12 @@ app.controller('loginPageController', function ($scope, $location, loginService)
         if (error_flag == 0) {
             //$location.path("/user_profile");
             loginService.checkLogin($scope.email,$scope.password).success(function (obj) {
-                console.log(obj);
+                if(obj.records.length>0){
+                    $location.path("/user_profile");
+                }
+                else{
+                    $scope.error_msg = "Incorrect username or password";
+                }
             });
         }
     }
