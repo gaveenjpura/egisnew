@@ -1,4 +1,4 @@
-app.controller('loginPageController', function ($scope,$location) {
+app.controller('loginPageController', function ($scope, $location, loginService) {
     $scope.email = "";
     $scope.password = "";
     var error_flag = 0;
@@ -12,7 +12,7 @@ app.controller('loginPageController', function ($scope,$location) {
                 if (email_char_pos == 0) {
                     //alert("not a valid username");
                     $scope.error_msg = "Invalid username";
-                    error_flag=1;
+                    error_flag = 1;
                 }
             }
             else {
@@ -20,16 +20,19 @@ app.controller('loginPageController', function ($scope,$location) {
                 var email_validity = reg_ex.test($scope.email);
                 if (!email_validity) {
                     $scope.error_msg = "Invalid email address";
-                    error_flag=1;
+                    error_flag = 1;
                 }
             }
         }
         else {
             $scope.error_msg = "Please fill all fields";
-            error_flag=1;
+            error_flag = 1;
         }
-        if(error_flag==0){
-            $location.path("/user_profile");
+        if (error_flag == 0) {
+            //$location.path("/user_profile");
+            loginService.checkLogin($scope.email,$scope.password).success(function (obj) {
+                console.log(obj);
+            });
         }
     }
 });
