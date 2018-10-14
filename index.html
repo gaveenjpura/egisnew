@@ -75,9 +75,18 @@
                 nextArrow: '.btn-next_popular',
                 autoplay: true
             };
+            var slickOpts_recent = {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                dots: true,
+                prevArrow: '.btn-prev_recent',
+                nextArrow: '.btn-next_recent',
+                autoplay: true
+            };
             // Init the slick
             $('#dashboard').slick(slickOpts);
             $('#dashboard-popular').slick(slickOpts_popular);
+            $('#dashboard-recent').slick(slickOpts_recent);
             var slickEnabled = true;
 
             // Add panel

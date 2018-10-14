@@ -5,6 +5,30 @@
         <a href="/register">Join Now</a>
     </div>
 </div>
+<!--search bar-->
+<div class="search-bar-container-home-page clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="search" placeholder="Search Anything Here"
+                           ng-model="search_text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <select id="cat_select" class="form-control"></select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <button class="btn btn-success search-btn">SEARCH</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--search bar end-->
 <!-- content-starts-here -->
 <div class="content" ng-controller="homeController">
     <div class="categories">
@@ -14,7 +38,8 @@
                 <a href="categories.html">
                     <div class="focus-border">
                         <div class="focus-layout">
-                            <div class="focus-image"><i ng-class="cat_item.icon" ng-style="{'background-color':cat_item.color}"></i>
+                            <div class="focus-image"><i ng-class="cat_item.icon"
+                                                        ng-style="{'background-color':cat_item.color}"></i>
                             </div>
                             <h4 class="clrchg">{{cat_item.name}}</h4>
                         </div>
@@ -22,6 +47,9 @@
                 </a>
             </div>
             <div class="clearfix"></div>
+            <div class="category-button-container">
+                <button class="btn btn-success all-cat-button">SHOW ALL CATEGORIES</button>
+            </div>
         </div>
     </div>
     <div class="featured-ads">
@@ -118,6 +146,9 @@
             </div>
         </div>
         <!-- //slider -->
+        <div class="feature-button-container">
+            <button class="btn btn-success feature-btn">SHOW ALL FEATURED PRODUCTS</button>
+        </div>
     </div>
     <div class="popular-ads">
         <div class="container">
@@ -213,6 +244,107 @@
             </div>
         </div>
         <!-- //slider -->
+        <div class="popular-button-container">
+            <button class="btn btn-success popular-btn">SHOW ALL POPULAR PRODUCTS</button>
+        </div>
+    </div>
+    <div class="recent-ads">
+        <div class="container">
+            <!-- slider -->
+            <div class="trend-ads">
+                <h2>Recent Products</h2>
+            </div>
+            <div id="nav-recent">
+                <button class="btn-prev_recent" id="recent-prev">Prev</button>
+                <button class="btn-next_recent" id="recent-next">Next</button>
+            </div>
+            <div id="dashboard-recent">
+                <div class="col-md-3 biseller-column">
+                    <a href="single.html">
+                        <img src="assets/images/p4.jpg"/>
+                        <span class="price">&#36; 159</span>
+                    </a>
+                    <div class="ad-info">
+                        <h5>passage of Lorem Ipsum you need to be</h5>
+                        <span>19 hour ago</span>
+                    </div>
+                </div>
+                <div class="col-md-3 biseller-column">
+                    <a href="single.html">
+                        <img src="assets/images/p4.jpg"/>
+                        <span class="price">&#36; 159</span>
+                    </a>
+                    <div class="ad-info">
+                        <h5>passage of Lorem Ipsum you need to be</h5>
+                        <span>19 hour ago</span>
+                    </div>
+                </div>
+                <div class="col-md-3 biseller-column">
+                    <a href="single.html">
+                        <img src="assets/images/p4.jpg"/>
+                        <span class="price">&#36; 159</span>
+                    </a>
+                    <div class="ad-info">
+                        <h5>passage of Lorem Ipsum you need to be</h5>
+                        <span>19 hour ago</span>
+                    </div>
+                </div>
+                <div class="col-md-3 biseller-column">
+                    <a href="single.html">
+                        <img src="assets/images/p4.jpg"/>
+                        <span class="price">&#36; 159</span>
+                    </a>
+                    <div class="ad-info">
+                        <h5>passage of Lorem Ipsum you need to be</h5>
+                        <span>19 hour ago</span>
+                    </div>
+                </div>
+                <div class="col-md-3 biseller-column">
+                    <a href="single.html">
+                        <img src="assets/images/p4.jpg"/>
+                        <span class="price">&#36; 159</span>
+                    </a>
+                    <div class="ad-info">
+                        <h5>passage of Lorem Ipsum you need to be</h5>
+                        <span>19 hour ago</span>
+                    </div>
+                </div>
+                <div class="col-md-3 biseller-column">
+                    <a href="single.html">
+                        <img src="assets/images/p4.jpg"/>
+                        <span class="price">&#36; 159</span>
+                    </a>
+                    <div class="ad-info">
+                        <h5>passage of Lorem Ipsum you need to be</h5>
+                        <span>19 hour ago</span>
+                    </div>
+                </div>
+                <div class="col-md-3 biseller-column">
+                    <a href="single.html">
+                        <img src="assets/images/p4.jpg"/>
+                        <span class="price">&#36; 159</span>
+                    </a>
+                    <div class="ad-info">
+                        <h5>passage of Lorem Ipsum you need to be</h5>
+                        <span>19 hour ago</span>
+                    </div>
+                </div>
+                <div class="col-md-3 biseller-column">
+                    <a href="single.html">
+                        <img src="assets/images/p4.jpg"/>
+                        <span class="price">&#36; 159</span>
+                    </a>
+                    <div class="ad-info">
+                        <h5>passage of Lorem Ipsum you need to be</h5>
+                        <span>19 hour ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //slider -->
+        <div class="recent-button-container">
+            <button class="btn btn-success recent-btn">SHOW ALL RECENT PRODUCTS</button>
+        </div>
     </div>
 </div>
 <script>
@@ -234,9 +366,18 @@
             nextArrow: '.btn-next_popular',
             autoplay: true
         };
+        var slickOpts_recent = {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            dots: true,
+            prevArrow: '.btn-prev_recent',
+            nextArrow: '.btn-next_recent',
+            autoplay: true
+        };
         // Init the slick
         $('#dashboard').slick(slickOpts);
         $('#dashboard-popular').slick(slickOpts_popular);
+        $('#dashboard-recent').slick(slickOpts_recent);
         var slickEnabled = true;
 
         // Add panel

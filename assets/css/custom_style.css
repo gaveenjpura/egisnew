@@ -183,3 +183,29 @@ button {
 .register_page .register-submit-btn {
     margin-top: 10px;
 }
+
+.content .category-button-container {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.content .feature-button-container {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.content .popular-button-container {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.content .recent-button-container {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.search-bar-container-home-page {
+    padding-top: 50px;
+}
