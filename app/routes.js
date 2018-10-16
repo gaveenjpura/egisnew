@@ -29,6 +29,12 @@ app.config(function($routeProvider,$locationProvider, $httpProvider) {
         .when('/user_profile', {
             templateUrl: 'app/views/pages/user_profile.html'
         })
+        .when('/all_category', {
+            templateUrl: 'app/views/pages/all_category.html'
+        })
+        .when('/single_category', {
+            templateUrl: 'app/views/pages/single_category.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

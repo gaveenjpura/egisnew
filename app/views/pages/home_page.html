@@ -5,38 +5,38 @@
         <a href="/register">Join Now</a>
     </div>
 </div>
-<!--search bar-->
-<div class="search-bar-container-home-page clearfix">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="search" placeholder="Search Anything Here"
-                           ng-model="search_text">
+<div class="content" ng-controller="homeController">
+    <!--search bar container-->
+    <div class="search-bar-container-home-page clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="search" placeholder="Search Anything Here"
+                               ng-model="search_text">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <select id="cat_select" class="form-control"></select>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <select id="cat_select" class="form-control" ng-options="item.name for item in category"
+                                ng-model="cat"></select>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <button class="btn btn-success search-btn">SEARCH</button>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <button class="btn btn-success search-btn">SEARCH</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!--search bar end-->
-<!-- content-starts-here -->
-<div class="content" ng-controller="homeController">
+    <!-- search bar end-->
     <div class="categories">
         <div class="container">
             <h2 class="home-page-category-title">Categories</h2>
-            <div class="col-md-2 focus-grid" ng-repeat="cat_item in category">
-                <a href="categories.html">
-                    <div class="focus-border">
+            <div class="col-md-2 focus-grid" ng-repeat="cat_item in category" ng-hide="cat_item.flag">
+                <a>
+                    <div class="focus-border" ng-click="goSingleCategory()">
                         <div class="focus-layout">
                             <div class="focus-image"><i ng-class="cat_item.icon"
                                                         ng-style="{'background-color':cat_item.color}"></i>
@@ -48,7 +48,7 @@
             </div>
             <div class="clearfix"></div>
             <div class="category-button-container">
-                <button class="btn btn-success all-cat-button">SHOW ALL CATEGORIES</button>
+                <button class="btn btn-success all-cat-button" ng-click="goAllCategory()">SHOW ALL CATEGORIES</button>
             </div>
         </div>
     </div>

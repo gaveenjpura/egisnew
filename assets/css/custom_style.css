@@ -209,3 +209,7 @@ button {
 .search-bar-container-home-page {
     padding-top: 50px;
 }
+
+.content .focus-border {
+    cursor: pointer;
+}
