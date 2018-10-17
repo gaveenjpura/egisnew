@@ -57,90 +57,15 @@
             <!-- slider -->
             <div class="trend-ads">
                 <h2>Featured Products</h2>
-            </div>
-            <div id="nav">
-                <button class="btn-prev">Prev</button>
-                <button class="btn-next">Next</button>
-            </div>
-            <div id="dashboard">
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
+                <div style="height: 305px">
+                    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                            <img ng-src="{{slide.image}}" style="margin:auto;">
+                            <div class="carousel-caption">
+                                <h4>Slide {{slide.id}}</h4>
+                                <p>{{slide.text}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -155,90 +80,15 @@
             <!-- slider -->
             <div class="trend-ads">
                 <h2>Popular Products</h2>
-            </div>
-            <div id="nav-popular">
-                <button class="btn-prev_popular" id="popular-prev">Prev</button>
-                <button class="btn-next_popular" id="popular-next">Next</button>
-            </div>
-            <div id="dashboard-popular">
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
+                <div style="height: 305px">
+                    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                            <img ng-src="{{slide.image}}" style="margin:auto;">
+                            <div class="carousel-caption">
+                                <h4>Slide {{slide.id}}</h4>
+                                <p>{{slide.text}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -253,90 +103,15 @@
             <!-- slider -->
             <div class="trend-ads">
                 <h2>Recent Products</h2>
-            </div>
-            <div id="nav-recent">
-                <button class="btn-prev_recent" id="recent-prev">Prev</button>
-                <button class="btn-next_recent" id="recent-next">Next</button>
-            </div>
-            <div id="dashboard-recent">
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
-                    </div>
-                </div>
-                <div class="col-md-3 biseller-column" ng-click="goSingleProduct()">
-                    <a>
-                        <img src="assets/images/p4.jpg"/>
-                        <span class="price">&#36; 159</span>
-                    </a>
-                    <div class="ad-info">
-                        <h5>passage of Lorem Ipsum you need to be</h5>
-                        <span>19 hour ago</span>
+                <div style="height: 305px">
+                    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                            <img ng-src="{{slide.image}}" style="margin:auto;">
+                            <div class="carousel-caption">
+                                <h4>Slide {{slide.id}}</h4>
+                                <p>{{slide.text}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

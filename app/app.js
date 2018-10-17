@@ -1,1 +1,1 @@
-var app=angular.module('Ski', ['ngRoute']);
+var app=angular.module('Ski', ['ngRoute','ngAnimate', 'ngSanitize', 'ui.bootstrap']);
