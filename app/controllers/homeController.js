@@ -23,4 +23,10 @@ app.controller('homeController', function ($scope, categoryService, $location) {
     $scope.goSingleCategory = function () {
         $location.path("/single_category");
     }
+    $scope.goAllProduct=function(){
+        $location.path("/all_product");
+    }
+    $scope.goSingleProduct=function(){
+        $location.path("/single_product");
+    }
 });

@@ -35,6 +35,12 @@ app.config(function($routeProvider,$locationProvider, $httpProvider) {
         .when('/single_category', {
             templateUrl: 'app/views/pages/single_category.html'
         })
+        .when('/all_product', {
+            templateUrl: 'app/views/pages/all_product.html'
+        })
+        .when('/single_product', {
+            templateUrl: 'app/views/pages/single_product.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
