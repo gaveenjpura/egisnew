@@ -1,7 +1,6 @@
 app.controller('homeController', function ($scope, categoryService, $location) {
     $scope.category = [];
     var category_name = [];
-    $scope.ads = [1, 2, 3, 4, 5, 6, 7,8];
     loadCategory();
     /*slider**/
     $scope.myInterval = 5000;

@@ -56,64 +56,6 @@
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script src="http://cdn.jsdelivr.net/jquery.slick/1.3.13/slick.min.js"></script>
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.slick/1.3.13/slick.css"/>
-    <script>
-        $(function () {
-            var $panel = $('<div class="panel">13</div>');
-            var slickOpts = {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                dots: true,
-                prevArrow: '.btn-prev',
-                nextArrow: '.btn-next',
-                autoplay: true
-            };
-            var slickOpts_popular = {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                dots: true,
-                prevArrow: '.btn-prev_popular',
-                nextArrow: '.btn-next_popular',
-                autoplay: true
-            };
-            var slickOpts_recent = {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                dots: true,
-                prevArrow: '.btn-prev_recent',
-                nextArrow: '.btn-next_recent',
-                autoplay: true
-            };
-            // Init the slick
-            $('#dashboard').slick(slickOpts);
-            $('#dashboard-popular').slick(slickOpts_popular);
-            $('#dashboard-recent').slick(slickOpts_recent);
-            var slickEnabled = true;
-
-            // Add panel
-            $('.btn-add').on('click', function () {
-                $('#dashboard').slickAdd($panel);
-            });
-
-
-            // Slick/Unslick
-            $('.btn-unslick').on('click', function (e) {
-                if (slickEnabled) {
-                    $('#dashboard').unslick();
-                    $(this).text('Slick');
-                    slickEnabled = false;
-                } else {
-                    $('#dashboard').slick(slickOpts);
-                    $(this).text('Unslick');
-                    slickEnabled = true;
-                }
-            });
-
-            // Re-slick
-            $('.btn-slick').on('click', function () {
-                $('#dashboard').slick(slickOpts);
-            });
-        });
-    </script>
     <!-- js -->
     <!--jquery-->
     <script src="assets/js/bootstrap.min.js"></script>
