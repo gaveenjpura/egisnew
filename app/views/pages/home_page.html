@@ -57,7 +57,7 @@
             <!-- slider -->
             <div class="trend-ads">
                 <h2>Featured Products</h2>
-                <div style="height: 305px">
+                <div style="height: 305px" ng-controller="featureSliderController">
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                             <img ng-src="{{slide.image}}" style="margin:auto;">
@@ -80,7 +80,7 @@
             <!-- slider -->
             <div class="trend-ads">
                 <h2>Popular Products</h2>
-                <div style="height: 305px">
+                <div style="height: 305px" ng-controller="popularSliderController">
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                             <img ng-src="{{slide.image}}" style="margin:auto;">
@@ -103,7 +103,7 @@
             <!-- slider -->
             <div class="trend-ads">
                 <h2>Recent Products</h2>
-                <div style="height: 305px">
+                <div style="height: 305px" ng-controller="recentSliderController">
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                             <img ng-src="{{slide.image}}" style="margin:auto;">
