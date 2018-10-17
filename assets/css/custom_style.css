@@ -217,3 +217,12 @@ button {
 .content .biseller-column {
     cursor: pointer;
 }
+
+.login_page .signup-text {
+    float: right;
+}
+
+.login_page .signup-text .signup-link:hover {
+    outline: none;
+    text-decoration: none;
+}
