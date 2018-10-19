@@ -1,4 +1,4 @@
-app.controller('registerPageController', function ($scope, $http,$location, phoneValidationService, countryValidationService) {
+app.controller('registerPageController', function ($scope, $http, $location, phoneValidationService, countryValidationService) {
     $scope.user_types = ["select user type", "buyer", "seller"];
     $scope.user = $scope.user_types[0];
     $scope.show_map = false;
@@ -30,11 +30,10 @@ app.controller('registerPageController', function ($scope, $http,$location, phon
         }
     }
     $scope.formValidation = function () {
-        alert($scope.display);
         var error_msg = {flag: 0};
         $scope.error_msg = "";
         if (($scope.first_name.length == 0) || ($scope.last_name.length == 0) || ($scope.dob.length == 0) ||
-            ($scope.phone_number.length == 0) || ($scope.email.length == 0) || ($scope.add_line_1.length == 0) ||
+            (!$scope.display) || ($scope.phone_number.length == 0) || ($scope.email.length == 0) || ($scope.add_line_1.length == 0) ||
             ($scope.add_line_2.length == 0) || ($scope.add_line_3.length == 0) || ($scope.username.length == 0) ||
             ($scope.password.length == 0) || ($scope.confirm_password.length == 0) || ($scope.user == $scope.user_types[0])) {
             $scope.error_msg = "fill all fields";
@@ -58,9 +57,13 @@ app.controller('registerPageController', function ($scope, $http,$location, phon
                         console.log(location);
                         countryValidationService.validateCountry(location).then(function (res) {
                             console.log(res);
-                            if (res.data.address.CountryCode != "LKA") {
+                            if (res.data.error) {
                                 $scope.error_msg = "location is not existing in Sri Lanka";
                                 error_msg.flag = 1;
+                            }
+                            else if(res.data.address.CountryCode != "LKA"){
+                                $scope.error_msg = "location is not existing in Sri Lanka";
+                                error_msg.flag = 1
                             }
                             else {
                                 if ($scope.password != $scope.confirm_password) {
@@ -92,14 +95,14 @@ app.controller('registerPageController', function ($scope, $http,$location, phon
     }
     $scope.upload = function (obj) {
         var elem = obj.target || obj.srcElement;
-            var file = elem.files[0];
-            var reader = new FileReader();
+        var file = elem.files[0];
+        var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $scope.images[0]=e.target.result;
-                $scope.display = e.target.result;
-                $scope.$apply();
-            }
-            reader.readAsDataURL(file);
+        reader.onload = function (e) {
+            $scope.images[0] = e.target.result;
+            $scope.display = e.target.result;
+            $scope.$apply();
+        }
+        reader.readAsDataURL(file);
     }
 });
