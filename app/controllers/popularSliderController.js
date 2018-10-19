@@ -1,12 +1,12 @@
 app.controller("popularSliderController", function ($scope) {
     /*slider**/
-    $scope.myInterval = 5000;
+    $scope.myInterval = 12000;
     $scope.noWrapSlides = false;
     $scope.active = 0;
     var slides = $scope.slides = [];
     var currIndex = 0;
     var image_index = 0;
-    var images = ["https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", "https://images.pexels.com/photos/516541/pexels-photo-516541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbySkNZ7vfPljGlMRIZUVq4WaGJYRwf8C49s8AkE6hYCB1-NMr5w"];
+    var images = ["assets/images/products/p4.gif", "assets/images/products/p7.jpg", "assets/images/products/p8.jpg", "assets/images/products/p4.gif","assets/images/products/p7.jpg","assets/images/products/p8.jpg","assets/images/products/p4.gif","assets/images/products/p7.jpg"];
     $scope.addSlide = function() {
         var newWidth = 600 + slides.length + 1;
         slides.push({
@@ -22,7 +22,7 @@ app.controller("popularSliderController", function ($scope) {
         assignNewIndexesToSlides(indexes);
     };
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 8; i++) {
         $scope.addSlide();
     }
 

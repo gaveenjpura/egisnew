@@ -226,3 +226,11 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+.carousel-caption {
+    position: inherit !important;
+    background-color: aquamarine;
+}
+.carousel-indicators {
+    bottom: 0px;
+}

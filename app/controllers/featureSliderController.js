@@ -1,17 +1,17 @@
 app.controller("featureSliderController", function ($scope) {
     /*slider**/
-    $scope.myInterval = 5000;
+    $scope.myInterval = 12000;
     $scope.noWrapSlides = false;
     $scope.active = 0;
     var slides = $scope.slides = [];
     var currIndex = 0;
     var image_index = 0;
-    var images = ["https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", "https://images.pexels.com/photos/516541/pexels-photo-516541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbySkNZ7vfPljGlMRIZUVq4WaGJYRwf8C49s8AkE6hYCB1-NMr5w"];
+    var images = [{image:"assets/images/products/p4.gif",title:"Phm Oils",qty:"12"}, {image:"assets/images/products/p7.jpg",title:"BVC Snacks",qty:"20"}, {image:"assets/images/products/p8.jpg",title:"DELL Laptop",qty:"100"}, {image:"assets/images/products/p4.gif",title:"XZA Oils",qty:"45"},{image:"assets/images/products/p7.jpg",title:"KLZ Biscuits",qty:"60"},{image:"assets/images/products/p8.jpg",title:"HP Laptop",qty:"54"},{image:"assets/images/products/p4.gif",title:"K Oils",qty:"67"},{image:"assets/images/products/p7.jpg",title:"MM Biscuit",qty:"50"}];
     $scope.addSlide = function () {
-        var newWidth = 600 + slides.length + 1;
         slides.push({
-            image: images[image_index],
-            text: ['Nice image', 'Awesome photograph', 'That is so cool', 'I love that'][slides.length % 4],
+            image: images[image_index].image,
+            text: images[image_index].title,
+            qty:images[image_index].qty,
             id: currIndex++
         });
         image_index = image_index + 1;
@@ -22,7 +22,7 @@ app.controller("featureSliderController", function ($scope) {
         assignNewIndexesToSlides(indexes);
     };
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 8; i++) {
         $scope.addSlide();
     }
 
