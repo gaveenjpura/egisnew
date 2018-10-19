@@ -39,6 +39,23 @@
                             <input type="text" class="form-control" id="email" placeholder="Email"
                                    name="email" ng-model="email">
                         </div>
+                        <div class="form-group clearfix">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <label>Upload Profile Photo</label>
+                                    <input type="file" ng-click="$event = $event" ng-model="display" multiple
+                                           onchange="angular.element(this).scope().upload(event)"
+                                           accept="image/png, image/jpeg, image/gif"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                              <span ng-repeat='img in images'> <a href="#" ng-click="setImage($index)">
+                                <img ng-src="{{img}}"
+                                     alt="Generic placeholder thumbnail" style="max-height:100px;" class="thumbnail"/>
+                                </a>
+                              </span>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="address_line_1">Address Line 1</label>
                             <input type="text" class="form-control" id="address_line_1" placeholder="Address Line 1"
@@ -100,7 +117,9 @@
                             </span>
                         </div>
                         <div class="button-container">
-                            <button type="button" class="btn btn-success register-submit-btn" ng-click="formValidation()">SUBMIT</button>
+                            <button type="button" class="btn btn-success register-submit-btn"
+                                    ng-click="formValidation()">SUBMIT
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -60,7 +60,13 @@
                 <div style="height: 305px" ng-controller="featureSliderController">
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-                            <img ng-src="{{slide.image}}" style="margin:auto;">
+                            <!--
+                            <img ng-src="{{slide.image}}" style="margin:auto;width: 603px;height: 300px;"
+                                 class="img-responsive">
+                                 -->
+                            <img ng-src="{{slide.image}}"
+                                 image-resize
+                                 image-Height="400px" image-Width="400px"/>
                             <div class="carousel-caption">
                                 <h4>Slide {{slide.id}}</h4>
                                 <p>{{slide.text}}</p>
@@ -83,7 +89,9 @@
                 <div style="height: 305px" ng-controller="popularSliderController">
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-                            <img ng-src="{{slide.image}}" style="margin:auto;">
+                            <img ng-src="{{slide.image}}"
+                                 image-resize
+                                 image-Height="400px" image-Width="400px"/>
                             <div class="carousel-caption">
                                 <h4>Slide {{slide.id}}</h4>
                                 <p>{{slide.text}}</p>
@@ -106,7 +114,13 @@
                 <div style="height: 305px" ng-controller="recentSliderController">
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-                            <img ng-src="{{slide.image}}" style="margin:auto;">
+                            <!--
+                            <img ng-src="{{slide.image}}" style="margin:auto;width:603px;height:300px;"
+                                 class="img-responsive">
+                                 -->
+                            <img ng-src="{{slide.image}}"
+                                 image-resize
+                                 image-Height="400px" image-Width="400px"/>
                             <div class="carousel-caption">
                                 <h4>Slide {{slide.id}}</h4>
                                 <p>{{slide.text}}</p>
@@ -121,4 +135,5 @@
             <button class="btn btn-success recent-btn" ng-click="goAllProduct()">SHOW ALL RECENT PRODUCTS</button>
         </div>
     </div>
+
 </div>

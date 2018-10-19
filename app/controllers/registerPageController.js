@@ -30,6 +30,7 @@ app.controller('registerPageController', function ($scope, $http,$location, phon
         }
     }
     $scope.formValidation = function () {
+        alert($scope.display);
         var error_msg = {flag: 0};
         $scope.error_msg = "";
         if (($scope.first_name.length == 0) || ($scope.last_name.length == 0) || ($scope.dob.length == 0) ||
@@ -78,5 +79,27 @@ app.controller('registerPageController', function ($scope, $http,$location, phon
     }
     $scope.formSubmission = function () {
         $location.path("/user_profile");
+    }
+    $scope.name = "Select Files to Upload";
+    $scope.images = [];
+    $scope.display = $scope.images[$scope.images.length - 1];
+    $scope.setImage = function (ix) {
+        $scope.display = $scope.images[ix];
+    }
+    $scope.clearAll = function () {
+        $scope.display = '';
+        $scope.images = [];
+    }
+    $scope.upload = function (obj) {
+        var elem = obj.target || obj.srcElement;
+            var file = elem.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $scope.images[0]=e.target.result;
+                $scope.display = e.target.result;
+                $scope.$apply();
+            }
+            reader.readAsDataURL(file);
     }
 });
