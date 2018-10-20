@@ -6,12 +6,12 @@ app.controller("recentSliderController",function($scope){
     var slides = $scope.slides = [];
     var currIndex = 0;
     var image_index = 0;
-    var images = ["assets/images/products/p4.gif", "assets/images/products/p7.jpg", "assets/images/products/p8.jpg", "assets/images/products/p4.gif","assets/images/products/p7.jpg","assets/images/products/p8.jpg","assets/images/products/p4.gif","assets/images/products/p7.jpg"];
-    $scope.addSlide = function() {
-        var newWidth = 600 + slides.length + 1;
+    var images = [{image:"assets/images/products/p4.gif",title:"Phm Oils",qty:"12"}, {image:"assets/images/products/p7.jpg",title:"BVC Snacks",qty:"20"}, {image:"assets/images/products/p8.jpg",title:"DELL Laptop",qty:"100"}, {image:"assets/images/products/p4.gif",title:"XZA Oils",qty:"45"},{image:"assets/images/products/p7.jpg",title:"KLZ Biscuits",qty:"60"},{image:"assets/images/products/p8.jpg",title:"HP Laptop",qty:"54"},{image:"assets/images/products/p4.gif",title:"K Oils",qty:"67"},{image:"assets/images/products/p7.jpg",title:"MM Biscuit",qty:"50"}];
+    $scope.addSlide = function () {
         slides.push({
-            image: images[image_index],
-            text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
+            image: images[image_index].image,
+            text: images[image_index].title,
+            qty:images[image_index].qty,
             id: currIndex++
         });
         image_index = image_index + 1;
