@@ -231,6 +231,60 @@ button {
     position: inherit !important;
     background-color: aquamarine;
 }
+
 .carousel-indicators {
     bottom: 0px;
+}
+
+.all_category_page {
+    margin-bottom: 50px;
+}
+
+.all_category_page .all_category_title {
+    text-align: center;
+    color: #f3c500;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+.all-product-page .adbox {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.all-product-page {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-height: 360px;
+}
+
+.all-product-page .adbox {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 15px;
+}
+
+.all-product-page .adbox .image-container {
+    border: 1px solid #ddd;
+    padding: 15px 15px;
+    border-radius: 6px;
+}
+
+.all-product-page .all_product_title {
+    text-align: center;
+    color: #f3c500;
+    font-size: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.all-product-page .all_category_title {
+    color: #f3c500;
+    font-size: 40px;
+    margin-bottom: 30px;
+    margin-top: 85px;
+}
+
+.focus-border-all-product {
+    margin-bottom: 20px;
 }

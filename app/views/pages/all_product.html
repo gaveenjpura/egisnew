@@ -1,0 +1,35 @@
+<div class="all-product-page" ng-controller="allProductController">
+    <div class="container">
+        <div class="row clearfix">
+
+            <div class="col-md-2">
+                <h2 class="all_category_title">Categories</h2>
+                <div class="focus-border focus-border-all-product" ng-repeat="cat_item in category">
+                    <div class="focus-layout">
+                        <div class="focus-image"><i ng-class="cat_item.icon"
+                                                    ng-style="{'background-color':cat_item.color}"></i>
+                        </div>
+                        <h4 class="clrchg">{{cat_item.name}}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h2 class="all_product_title">All Products</h2>
+                <div class="adbox clearfix" ng-repeat="num in getNum(number) track by $index">
+                    <div class="col-md-6">
+                        <div class="image-container">
+                            <img src="assets/images/products/p7.jpg" class="img-responsive"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>SAD Cooking Oils</h2>
+                        <h4>Brand New</h4>
+                        <h4>Rs.3000/=</h4>
+                        <h4>4 sold</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>

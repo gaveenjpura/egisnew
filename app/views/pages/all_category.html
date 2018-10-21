@@ -1,0 +1,19 @@
+<div class="all_category_page" ng-controller="allCategoryController">
+    <div class="container">
+        <div class="row clearfix">
+            <h2 class="all_category_title">All Categories</h2>
+            <div class="col-md-2 focus-grid" ng-repeat="cat_item in category">
+                <a>
+                    <div class="focus-border" ng-click="goSingleCategory()">
+                        <div class="focus-layout">
+                            <div class="focus-image"><i ng-class="cat_item.icon"
+                                                        ng-style="{'background-color':cat_item.color}"></i>
+                            </div>
+                            <h4 class="clrchg">{{cat_item.name}}</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -33,10 +33,10 @@
     <!-- search bar end-->
     <div class="categories">
         <div class="container">
-            <h2 class="home-page-category-title">Categories</h2>
+            <h2 class="home-page-category-title">Top Categories</h2>
             <div class="col-md-2 focus-grid" ng-repeat="cat_item in category" ng-hide="cat_item.flag">
                 <a>
-                    <div class="focus-border" ng-click="goSingleCategory()">
+                    <div class="focus-border" ng-click="goAllProduct()">
                         <div class="focus-layout">
                             <div class="focus-image"><i ng-class="cat_item.icon"
                                                         ng-style="{'background-color':cat_item.color}"></i>
@@ -70,6 +70,7 @@
                             <div class="carousel-caption">
                                 <h4>{{slide.text}}</h4>
                                 <p>Available {{slide.qty}} items</p>
+                                <button class="btn btn-success feature-ad-btn">Shop Now</button>
                             </div>
                         </div>
                     </div>
@@ -97,6 +98,7 @@
                             <div class="carousel-caption">
                                 <h4>{{slide.text}}</h4>
                                 <p>Available {{slide.qty}} items</p>
+                                <button class="btn btn-success feature-ad-btn">Shop Now</button>
                             </div>
                         </div>
                     </div>
@@ -126,6 +128,7 @@
                             <div class="carousel-caption">
                                 <h4>{{slide.text}}</h4>
                                 <p>Available {{slide.qty}} items</p>
+                                <button class="btn btn-success feature-ad-btn">Shop Now</button>
                             </div>
                         </div>
                     </div>
