@@ -81,8 +81,11 @@ app.controller('homeController', function ($scope, categoryService, $location) {
     $scope.goSingleCategory = function () {
         $location.path("/single_category");
     }
+    $scope.goAllProductCategory = function () {
+        $location.path("/all_product/cat");
+    }
     $scope.goAllProduct = function () {
-        $location.path("/all_product");
+        $location.path("/all_product/all");
     }
     $scope.goSingleProduct = function () {
         $location.path("/single_product");

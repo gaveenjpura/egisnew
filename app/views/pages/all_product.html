@@ -14,7 +14,17 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <h2 class="all_product_title">All Products</h2>
+                <div class="single-title-container" ng-show="cat">
+                    <div class="focus-border focus-border-all-product">
+                        <div class="focus-layout">
+                            <div class="focus-image"><i ng-class="category[0].icon"
+                                                        ng-style="{'background-color':category[0].color}"></i>
+                            </div>
+                            <h4 class="clrchg">{{category[0].name}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="all_product_title" ng-show="all">All Products</h2>
                 <div class="adbox clearfix" ng-repeat="num in getNum(number) track by $index">
                     <div class="col-md-6">
                         <div class="image-container">
