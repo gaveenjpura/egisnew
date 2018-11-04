@@ -1,4 +1,27 @@
-app.controller('homeController', function ($scope, categoryService, $location) {
+app.controller('homeController', function ($scope, categoryService, $location, $uibModal) {
+    $scope.items = ['item1', 'item2', 'item3'];
+    $scope.animationsEnabled = true;
+    var $ctrl = this;
+    $scope.open = function (size,parentSelector) {
+        var parentElem = parentSelector ?
+            angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+        var modalInstance = $uibModal.open({
+            animation: $ctrl.animationsEnabled,
+            ariaLabelledBy: 'modal-title',
+            ariaDescribedBy: 'modal-body',
+            templateUrl: 'myModalContent.html',
+            controller: 'ModalInstanceCtrl',
+            controllerAs: '$ctrl',
+            size: size,
+            appendTo: parentElem,
+            resolve: {
+                items: function () {
+                    return $ctrl.items;
+                }
+            }
+        });
+    }
+
     $scope.category = [];
     var category_name = [];
     loadCategory();
@@ -8,17 +31,16 @@ app.controller('homeController', function ($scope, categoryService, $location) {
     $scope.active = 0;
     var slides = $scope.slides = [];
     var currIndex = 0;
-
-    $scope.addSlide = function() {
+    $scope.addSlide = function () {
         var newWidth = 600 + slides.length + 1;
         slides.push({
             image: '//unsplash.it/' + newWidth + '/300',
-            text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
+            text: ['Nice image', 'Awesome photograph', 'That is so cool', 'I love that'][slides.length % 4],
             id: currIndex++
         });
     };
 
-    $scope.randomize = function() {
+    $scope.randomize = function () {
         var indexes = generateIndexesArray();
         assignNewIndexesToSlides(indexes);
     };
@@ -58,6 +80,7 @@ app.controller('homeController', function ($scope, categoryService, $location) {
 
         return array;
     }
+
     /* end slider */
     var obj = {id: "0", name: "select a category", icon: "0", color: "0", flag: true};
 

@@ -30,8 +30,8 @@ app.controller('loginPageController', function ($scope, $location, loginService)
         }
         if (error_flag == 0) {
             //$location.path("/user_profile");
-            loginService.checkLogin($scope.email,$scope.password).success(function (obj) {
-                if(obj.records.length>0){
+            loginService.checkLogin($scope.email,$scope.password).then(function (obj) {
+                if(obj.data.records.length>0){
                     $location.path("/user_profile");
                 }
                 else{

@@ -104,8 +104,7 @@
     </script>
     <!--end-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbMnH8NLQ-689cNuQyVqrLHLhzAYzu0g4"></script>
-    <script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.6/angular.js"
-            data-semver="1.3.6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.6/angular-route.js"
             data-semver="1.3.6"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
@@ -133,9 +132,22 @@
     <script src="app/controllers/recentSliderController.js"></script>
     <script src="app/controllers/allCategoryController.js"></script>
     <script src="app/controllers/allProductController.js"></script>
+    <script src="app/controllers/modalController.js"></script>
     <!--end-->
 </head>
 <body>
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        Selected
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+    </div>
+</script>
 <div class="header">
     <div class="container">
         <div class="logo">
