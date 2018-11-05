@@ -288,3 +288,30 @@ button {
 .focus-border-all-product {
     margin-bottom: 20px;
 }
+
+.horizontal-collapse {
+    height: 70px;
+}
+
+.navbar-collapse.in {
+    overflow-y: hidden;
+}
+
+.main-menu {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main-menu .main-item {
+    width: 250px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.main-menu .secondary-item {
+    width: 250px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
