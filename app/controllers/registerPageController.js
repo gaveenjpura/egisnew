@@ -1,5 +1,5 @@
-app.controller('registerPageController', function ($scope, $http, $location, phoneValidationService, countryValidationService) {
-    $scope.user_types = ["select user type", "buyer", "seller"];
+app.controller('registerPageController', function ($scope, $http, $location, phoneValidationService, countryValidationService, registerService) {
+    $scope.user_types = ["select user type", "buyer", "seller", "bayer & seller"];
     $scope.user = $scope.user_types[0];
     $scope.show_map = false;
     $scope.obj = {
@@ -56,12 +56,11 @@ app.controller('registerPageController', function ($scope, $http, $location, pho
                         var location = {lat: $scope.obj.prop1, lon: $scope.obj.prop2};
                         console.log(location);
                         countryValidationService.validateCountry(location).then(function (res) {
-                            console.log(res);
                             if (res.data.error) {
                                 $scope.error_msg = "location is not existing in Sri Lanka";
                                 error_msg.flag = 1;
                             }
-                            else if(res.data.address.CountryCode != "LKA"){
+                            else if (res.data.address.CountryCode != "LKA") {
                                 $scope.error_msg = "location is not existing in Sri Lanka";
                                 error_msg.flag = 1
                             }
@@ -81,7 +80,12 @@ app.controller('registerPageController', function ($scope, $http, $location, pho
         }
     }
     $scope.formSubmission = function () {
-        $location.path("/user_profile");
+        //$location.path("/user_profile");
+        var u_type = $scope.user_types.indexOf($scope.user);
+        console.log($scope.display);
+        registerService.register($scope.first_name, $scope.last_name, u_type, $scope.dob, $scope.phone_number, $scope.email, $scope.add_line_1, $scope.add_line_2, $scope.add_line_3, $scope.obj.prop1, $scope.obj.prop2, $scope.username, $scope.password,$scope.display).then(function (obj) {
+            console.log(obj);
+        });
     }
     $scope.name = "Select Files to Upload";
     $scope.images = [];
