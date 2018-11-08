@@ -1,4 +1,4 @@
-app.controller('registerPageController', function ($scope, $http, $location, phoneValidationService, countryValidationService, registerService) {
+app.controller('registerPageController',function ($scope, $http, $location, phoneValidationService, countryValidationService, registerService,$uibModal) {
     $scope.user_types = ["select user type", "buyer", "seller", "bayer & seller"];
     $scope.user = $scope.user_types[0];
     $scope.show_map = false;
@@ -17,7 +17,26 @@ app.controller('registerPageController', function ($scope, $http, $location, pho
     $scope.username = "";
     $scope.password = "";
     $scope.confirm_password = "";
-
+    $ctrl=this;
+    $scope.open = function (size, parentSelector) {
+        var parentElem = parentSelector ?
+            angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+        var modalInstance = $uibModal.open({
+            animation: $ctrl.animationsEnabled,
+            ariaLabelledBy: 'modal-title',
+            ariaDescribedBy: 'modal-body',
+            templateUrl: 'myModalContent.html',
+            controller: 'ModalInstanceCtrl',
+            controllerAs: '$ctrl',
+            size: size,
+            appendTo: parentElem,
+            resolve: {
+                items: function () {
+                    return $ctrl.items;
+                }
+            }
+        });
+    }
     $http.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDbMnH8NLQ-689cNuQyVqrLHLhzAYzu0g4")
         .then(function (response) {
             $scope.myWelcome = response.data;
@@ -83,8 +102,9 @@ app.controller('registerPageController', function ($scope, $http, $location, pho
         //$location.path("/user_profile");
         var u_type = $scope.user_types.indexOf($scope.user);
         console.log($scope.display);
-        registerService.register($scope.first_name, $scope.last_name, u_type, $scope.dob, $scope.phone_number, $scope.email, $scope.add_line_1, $scope.add_line_2, $scope.add_line_3, $scope.obj.prop1, $scope.obj.prop2, $scope.username, $scope.password,$scope.display).then(function (obj) {
-            console.log(obj);
+        registerService.register($scope.first_name, $scope.last_name, u_type, $scope.dob, $scope.phone_number, $scope.email, $scope.add_line_1, $scope.add_line_2, $scope.add_line_3, $scope.obj.prop1, $scope.obj.prop2, $scope.username, $scope.password, $scope.display).then(function (obj) {
+            $scope.open();
+            $location.path("/user_profile");
         });
     }
     $scope.name = "Select Files to Upload";

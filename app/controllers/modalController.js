@@ -2,11 +2,11 @@ app.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', function($sc
     var $ctrl = this;
     $ctrl.items = items;
 
-    $ctrl.ok = function () {
+    $ctrl.modalOk = function () {
         $uibModalInstance.close();
     };
 
-    $ctrl.cancel = function () {
+    $ctrl.modalCancel = function () {
         $uibModalInstance.close();
     };
 }
