@@ -2,61 +2,59 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div ng-controller="collapseDemoCtrl" class="main-menu">
-                    <div class="btn btn-default main-item" ng-click="isCollapsedMod1 = !isCollapsedMod1">
-                        Module-1
+                <navigation-menu-directive></navigation-menu-directive>
+            </div>
+            <div class="col-md-8">
+                <div class="user-profile-secondary-container" ng-controller="editProfileController">
+                    <div class="title">
+                        <h2>Update User Details</h2>
                     </div>
-                    <div class="secondary-item" uib-collapse="isCollapsedMod1">
-                        <span>Some content</span>
-                    </div>
-
-                    <div class="btn btn-default main-item" ng-click="isCollapsedMod2 = !isCollapsedMod2">
-                        Module-2
-                    </div>
-                    <div class="secondary-item" uib-collapse="isCollapsedMod2">
-                        <span>Some content</span>
-                    </div>
-
-                    <div class="btn btn-default main-item" ng-click="isCollapsedMod3 = !isCollapsedMod3">
-                        Module-3
-                    </div>
-                    <div class="secondary-item" uib-collapse="isCollapsedMod3">
-                        <span>Some content</span>
-                    </div>
-
-                    <div class="btn btn-default main-item" ng-click="isCollapsedMod4 = !isCollapsedMod4">
-                        Module-4
-                    </div>
-                    <div class="secondary-item" uib-collapse="isCollapsedMod4">
-                        <span>Some content</span>
-                    </div>
-
-                    <div class="btn btn-default main-item" ng-click="isCollapsedMod5 = !isCollapsedMod5">
-                        Module-5
-                    </div>
-                    <div class="secondary-item" uib-collapse="isCollapsedMod5">
-                        <span>Some content</span>
-                    </div>
-
-                    <div class="btn btn-default main-item" ng-click="isCollapsedMod6 = !isCollapsedMod6">
-                        Module-6
-                    </div>
-                    <div class="secondary-item" uib-collapse="isCollapsedMod6">
-                        <span>Some content</span>
-                    </div>
-
-                    <div class="btn btn-default main-item" ng-click="isCollapsedMod7 = !isCollapsedMod7">
-                        Module-7
-                    </div>
-                    <div class="secondary-item" uib-collapse="isCollapsedMod7">
-                        <span>Some content</span>
-                    </div>
-
-                    <div class="btn btn-default main-item" ng-click="isCollapsedMod8 = !isCollapsedMod8">
-                        Module-8
-                    </div>
-                    <div class="secondary-item" uib-collapse="isCollapsedMod8">
-                        <span>Some content</span>
+                    <div class="details-container">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" id="first_name" ng-model="first_name" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" id="last_name" ng-model="last_name" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <input type="text" class="form-control" id="type" ng-model="type" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="text" class="form-control" id="dob" ng-model="dob" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" class="form-control" ng-model="phone_number" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" ng-model="email" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Profile Photo</label>
+                            <div class="photo-container">
+                                <img ng-src="{{img_path}}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 1</label>
+                            <input type="text" class="form-control" ng-model="add1">
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 2</label>
+                            <input type="text" class="form-control" ng-model="add2">
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 3</label>
+                            <input type="text" class="form-control" ng-model="add3">
+                        </div>
+                        <div class="button-container">
+                            <button class="btn btn-success save-btn">SAVE</button>
+                        </div>
                     </div>
                 </div>
             </div>

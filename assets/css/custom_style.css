@@ -319,3 +319,24 @@ button {
 .modal-body, .modal-footer {
     text-align: center;
 }
+
+.user_profile_main_container .user-profile-secondary-container .button-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.user_profile_main_container .user-profile-secondary-container .button-container .save-btn {
+    width: 200px;
+}
+
+.user_profile_main_container .user-profile-secondary-container {
+    padding-top: 10px;
+}
+
+.user_profile_main_container .user-profile-secondary-container .photo-container {
+    width: 135px;
+}
+
+.user_profile_main_container .user-profile-secondary-container img {
+    width: auto;
+}

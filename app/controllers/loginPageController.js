@@ -1,4 +1,4 @@
-app.controller('loginPageController', function ($scope, $location, loginService) {
+app.controller('loginPageController', function ($scope, $location, loginService,sessionService) {
     $scope.email = "";
     $scope.password = "";
     var error_flag = 0;
@@ -32,6 +32,8 @@ app.controller('loginPageController', function ($scope, $location, loginService)
             //$location.path("/user_profile");
             loginService.checkLogin($scope.email,$scope.password).then(function (obj) {
                 if(obj.data.records.length>0){
+                    console.log(obj.data.records[0]);
+                    sessionService.setUser(obj.data.records[0].user_id);
                     $location.path("/user_profile");
                 }
                 else{

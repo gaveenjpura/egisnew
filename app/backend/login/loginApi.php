@@ -5,14 +5,15 @@ $user = json_decode(file_get_contents("php://input"));
 $conn = new mysqli("localhost", "root", "", "egis");
 $pass = $user->password;
 $username=$user->username;
-$result = $conn->query("SELECT username,password FROM login where username='$username' and password='$pass'");
+$result = $conn->query("SELECT username,password,user_id FROM login where username='$username' and password='$pass'");
 $outp = "";
 while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {
         $outp .= ",";
     }
     $outp .= '{"username":"' . $rs["username"] . '",';
-    $outp .= '"password":"' . $rs["password"] . '"}';
+    $outp .= '"password":"' . $rs["password"] . '",';
+    $outp .= '"user_id":"' . $rs["user_id"] . '"}';
 }
 $outp = '{"records":[' . $outp . ']}';
 $conn->close();
