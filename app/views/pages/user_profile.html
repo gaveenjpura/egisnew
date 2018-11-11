@@ -52,8 +52,34 @@
                             <label>Address Line 3</label>
                             <input type="text" class="form-control" ng-model="add3">
                         </div>
-                        <div class="button-container">
-                            <button class="btn btn-success save-btn">SAVE</button>
+                        <div class="clearfix">
+                            <div class="col-md-6" style="padding-left: 0px;">
+                                <div class="form-group">
+                                    <label>Latitude</label>
+                                    <input type="text" class="form-control" ng-model="obj.prop1">
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-left: 0px;">
+                                <div class="form-group">
+                                    <label>Longitude</label>
+                                    <input type="text" class="form-control" ng-model="obj.prop2">
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button type="button" class="btn btn-default show-map-btn" ng-click="editMapClick()">
+                                    CLICK
+                                    TO SHOW AND EDIT LOCATION ON MAP THEN CLICK AGAIN TO SYNCHRONIZE
+                                </button>
+                            </div>
+                            <div class="edit-map-container">
+                                <map-dir id="map" location="obj" ng-if="show_map"></map-dir>
+                            </div>
+                        </div>
+                        <div class="error-msg-container">
+                            <span class="error-msg">{{error_msg}}</span>
+                        </div>
+                        <div class="button-container" style="padding-top: 20px;">
+                            <button class="btn btn-success save-btn" ng-click="submit();">SAVE</button>
                         </div>
                     </div>
                 </div>

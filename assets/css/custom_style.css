@@ -340,3 +340,14 @@ button {
 .user_profile_main_container .user-profile-secondary-container img {
     width: auto;
 }
+
+.user_profile_main_container .user-profile-secondary-container .button-container {
+    text-align: center;
+}
+
+.user_profile_main_container .user-profile-secondary-container .show-map-btn {
+    width: 455px !important;
+    background-color: darkkhaki;
+    margin-top: 15px;
+    font-size: 11px;
+}

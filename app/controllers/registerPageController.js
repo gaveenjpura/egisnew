@@ -1,4 +1,4 @@
-app.controller('registerPageController',function ($scope, $http, $location, phoneValidationService, countryValidationService, registerService,$uibModal) {
+app.controller('registerPageController',function ($scope, $http, $location, phoneValidationService, countryValidationService, registerService,$uibModal,sessionService) {
     $scope.user_types = ["select user type", "buyer", "seller", "bayer & seller"];
     $scope.user = $scope.user_types[0];
     $scope.show_map = false;
@@ -103,6 +103,7 @@ app.controller('registerPageController',function ($scope, $http, $location, phon
         var u_type = $scope.user_types.indexOf($scope.user);
         console.log($scope.display);
         registerService.register($scope.first_name, $scope.last_name, u_type, $scope.dob, $scope.phone_number, $scope.email, $scope.add_line_1, $scope.add_line_2, $scope.add_line_3, $scope.obj.prop1, $scope.obj.prop2, $scope.username, $scope.password, $scope.display).then(function (obj) {
+            console.log(obj.data.records[0].username);
             $scope.open();
             $location.path("/user_profile");
         });
