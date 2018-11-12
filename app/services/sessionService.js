@@ -6,4 +6,7 @@ app.service("sessionService", function () {
     this.getUser = function () {
         return user_id;
     }
+    this.clearUser = function () {
+        user_id = "";
+    }
 });

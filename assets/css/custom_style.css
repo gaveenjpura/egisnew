@@ -280,7 +280,7 @@ button {
 
 .all-product-page .all_category_title {
     color: #f3c500;
-    font-size: 40px;
+    font-size: 26px;
     margin-bottom: 30px;
     margin-top: 85px;
 }
@@ -361,4 +361,14 @@ button {
     background-position-x:center;
     background-position-y: center;
     background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+.profile-photo-circle .logout-text{
+    border: 1px solid black;
+    position: absolute;
+    bottom: 15px;
+    right: -60px;
+    padding: 3px 3px;
+    cursor: pointer;
 }
