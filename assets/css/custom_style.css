@@ -351,3 +351,14 @@ button {
     margin-top: 15px;
     font-size: 11px;
 }
+
+.profile-photo-circle {
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-top: -20px;
+    background-position-x:center;
+    background-position-y: center;
+    background-size: cover;
+}

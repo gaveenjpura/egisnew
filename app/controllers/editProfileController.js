@@ -36,6 +36,7 @@ app.controller("editProfileController", function ($scope, sessionService, userDe
                 prop1: $scope.lat,
                 prop2: $scope.lon
             };
+            $rootScope.setProfilePhoto($scope.img_path);
         });
     }
 

@@ -139,6 +139,7 @@
     <script src="app/controllers/modalController.js"></script>
     <script src="app/controllers/collapseController.js"></script>
     <script src="app/controllers/editProfileController.js"></script>
+    <script src="app/controllers/horizontalMenuController.js"></script>
     <!--end-->
 </head>
 <body>
@@ -175,7 +176,7 @@
         <button class="btn btn-warning" type="button" ng-click="$ctrl.modalOk()">OK</button>
     </div>
 </script>
-<div class="header">
+<div class="header" ng-controller="horizontalMenuController">
     <div class="container">
         <div class="logo">
             <a href="index.html"><span>E</span>GIS</a>
@@ -186,7 +187,8 @@
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/delivery">Product Delivery</a></li>
                 <li><a href="/contact">Contact Us</a></li>
-                <li><a href="/login">Login</a></li>
+                <li ng-show="login_text"><a href="/login">Login</a></li>
+                <li ng-show="profile_photo"><span class="profile-photo-circle" style="background-image:url('{{image__url}}');"></span></li>
             </ul>
         </div>
     </div>
