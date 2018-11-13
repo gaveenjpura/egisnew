@@ -1,5 +1,5 @@
-app.controller('collapseDemoCtrl', function ($scope) {
-    $scope.isCollapsedMod1 = true;
+app.controller('collapseDemoCtrl', function ($scope,$location) {
+    $scope.isCollapsedUserProfile = false;
     $scope.isCollapsedMod2 = true;
     $scope.isCollapsedMod3 = true;
     $scope.isCollapsedMod4 = true;
@@ -7,4 +7,9 @@ app.controller('collapseDemoCtrl', function ($scope) {
     $scope.isCollapsedMod6 = true;
     $scope.isCollapsedMod7 = true;
     $scope.isCollapsedMod8 = true;
+    $scope.viewUpdateProfile = true;
+
+    $scope.goBranchPage=function(){
+        $location.path("/branch_page");
+    }
 });
