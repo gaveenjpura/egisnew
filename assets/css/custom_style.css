@@ -377,3 +377,39 @@ button {
 .selected_navigation_tab {
     background-color: burlywood !important;
 }
+
+.branch-page {
+    padding-bottom: 15px;
+}
+
+.branch-page .title-container {
+    padding-top: 10px;
+}
+
+.branch-page .title-container h2 {
+    padding-top: 0px;
+}
+
+.branch-page .branch-name span {
+    font-size: 18px !important;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.branch-page .image-container img {
+    width: 75%;
+    margin-top: 15px;
+}
+
+.branch-page .route-map-container {
+    margin-top: 15px;
+}
+
+.branch-page .route-map-container .map-container {
+    margin-top: 15px;
+}
+
+.branch-page .button-container {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}

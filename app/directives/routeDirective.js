@@ -1,6 +1,7 @@
-app.directive('mapRoute', function () {
+app.directive('mapRoute', function ($rootScope) {
     return {
         restrict: 'E',
+        scope:{},
         link: function (scope, element) {
             var mapOptions = {
                 zoom: 7,
@@ -33,8 +34,9 @@ app.directive('mapRoute', function () {
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
-                console.log("response-"+response.routes[0].legs[0].distance.text);
-                console.log("response-"+response.routes[0].legs[0].duration.text);
+                console.log("response-" + response.routes[0].legs[0].distance.text);
+                console.log("response-" + response.routes[0].legs[0].duration.text);
+                $rootScope.setDistanceTime(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text);
             });
         }
     };

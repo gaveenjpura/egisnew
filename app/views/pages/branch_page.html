@@ -1,5 +1,39 @@
 <div class="branch-page" ng-controller="branchPageController">
     <div class="container">
-            <map-route id="map"></map-route>
+        <div class="row">
+            <div class="col-md-4">
+                <navigation-menu-directive></navigation-menu-directive>
+            </div>
+            <div class="col-md-8">
+                <div class="title-container">
+                    <h2>Branch Details</h2>
+                </div>
+                <div class="branch-name">
+                    <span>EGIS Head Office (Colombo Branch)</span>
+                </div>
+                <div class="image-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRkHHgoNJLR63qqJv8d-ywOTqvNK6v0a5a9I67F5DCqjqoh8oO"/>
+                </div>
+                <div class="route-map-container">
+                    <div class="title-container">
+                        <h3>Shortest Route Between Residence and Branch Office</h3>
+                    </div>
+                    <div class="map-container">
+                        <map-route id="map"></map-route>
+                    </div>
+                    <div class="button-container">
+                        <button class="btn btn-success" ng-click="click()">CLICK HERE TO SHOW TRAVEL DISTANCE AND TIME</button>
+                    </div>
+                    <div class="distance-container clearfix" ng-show="show_dis">
+                        <div class="col-md-3">Distance</div>
+                        <div class="col-md-9"><span>{{distance}}</span></div>
+                    </div>
+                    <div class="time-container clearfix" ng-show="show_dis">
+                        <div class="col-md-3">Estimated Travel Time</div>
+                        <div class="col-md-9"><span>{{time}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
