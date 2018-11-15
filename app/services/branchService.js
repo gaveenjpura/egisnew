@@ -3,7 +3,7 @@ app.service('branchService',function($http){
         return $http({
             method: 'POST',
             headers: {'Content-Type': 'application/json; charset=UTF-8'},
-            data: {'data': user_id},
+            data: {'user_id': user_id},
             url: 'app/backend/user/branchDetailsApi.php'
         });
     }
