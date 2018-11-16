@@ -19,12 +19,21 @@ $password = $user->password;
 $image=$user->image;
 $image = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $image));
 $conn = new mysqli("localhost", "root", "", "egis");
-$result_user_table = $conn->query("INSERT INTO user (fname,lname,user_type,dob,phone_num,email,add_1,add_2,add_3,lat,lon) values('$fname','$lname','$type','$dob','$phone_num','$email','$add1','$add2','$add3','$lat','$lon')");
+$result_user_table = $conn->query("INSERT INTO user (fname,lname,dob,phone_num,email,add_1,add_2,add_3,lat,lon) values('$fname','$lname','$dob','$phone_num','$email','$add1','$add2','$add3','$lat','$lon')");
 $result_user_id = $conn->query("SELECT user_id FROM user order by user_id DESC limit 1");
 $rs = $result_user_id->fetch_array(MYSQLI_ASSOC);
 $user_id = $rs["user_id"];
 if ($result_user_table) {
     $result_login_table = $conn->query("INSERT INTO login (username,password,user_id) values('$username','$password','$user_id')");
+	if($type==1){
+		$result_buyer_table=$conn->query("INSERT INTO buyer (user_id) values ('$user_id')");
+	}
+	if ($type==2){
+		$result_seller_table=$conn->query("INSERT INTO seller (user_id) values ('$user_id')");
+	}
+	if($type==3){
+		$result_buyer_seller_table=$conn->query("INSERT INTO buyer_and_seller (user_id) values ('$user_id')");
+	}
 }
 $img_location='../profile_photos/'.$user_id.'.jpg';
 file_put_contents($img_location, $image);

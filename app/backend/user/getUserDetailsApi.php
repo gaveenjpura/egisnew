@@ -4,6 +4,18 @@ header("Content-Type: application/json; charset=UTF-8");
 $user = json_decode(file_get_contents("php://input"));
 $conn = new mysqli("localhost", "root", "", "egis");
 $user_id = $user->user_id;
+$result_buyer=$conn->query("select * from buyer where user_id='$user_id'");
+if(mysqli_num_rows($result_buyer)!=0){
+	$type="1";
+}
+$result_seller=$conn->query("select * from seller where user_id='$user_id'");
+if(mysqli_num_rows($result_seller)!=0){
+	$type="2";
+}
+$result_buyer_seller=$conn->query("select * from buyer_and_seller where user_id='$user_id'");
+if(mysqli_num_rows($result_buyer_seller)!=0){
+	$type="3";
+}
 $result = $conn->query("SELECT * from user where user_id='$user_id'");
 $outp = "";
 while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -13,7 +25,7 @@ while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '{"user_id":"' . $rs["user_id"] . '",';
     $outp .= '"fname":"' . $rs["fname"] . '",';
     $outp .= '"lname":"' . $rs["lname"] . '",';
-    $outp .= '"user_type":"' . $rs["user_type"] . '",';
+    $outp .= '"user_type":"' . $type . '",';
     $outp .= '"dob":"' . $rs["dob"] . '",';
     $outp .= '"phone_num":"' . $rs["phone_num"] . '",';
     $outp .= '"email":"' . $rs["email"] . '",';
