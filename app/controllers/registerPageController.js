@@ -1,4 +1,4 @@
-app.controller('registerPageController',function ($scope, $http, $location, phoneValidationService, countryValidationService, registerService,$uibModal,sessionService) {
+app.controller('registerPageController', function ($scope, $http, $location, phoneValidationService, countryValidationService, registerService, $uibModal, sessionService, reverseGeocodeService) {
     $scope.user_types = ["select user type", "buyer", "seller", "bayer & seller"];
     $scope.user = $scope.user_types[0];
     $scope.show_map = false;
@@ -17,7 +17,7 @@ app.controller('registerPageController',function ($scope, $http, $location, phon
     $scope.username = "";
     $scope.password = "";
     $scope.confirm_password = "";
-    $ctrl=this;
+    $ctrl = this;
     $scope.open = function (size, parentSelector) {
         var parentElem = parentSelector ?
             angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
@@ -100,12 +100,15 @@ app.controller('registerPageController',function ($scope, $http, $location, phon
     }
     $scope.formSubmission = function () {
         //$location.path("/user_profile");
-        var u_type = $scope.user_types.indexOf($scope.user);
-        console.log($scope.display);
-        registerService.register($scope.first_name, $scope.last_name, u_type, $scope.dob, $scope.phone_number, $scope.email, $scope.add_line_1, $scope.add_line_2, $scope.add_line_3, $scope.obj.prop1, $scope.obj.prop2, $scope.username, $scope.password, $scope.display).then(function (obj) {
-            console.log(obj.data.records[0].username);
-            $scope.open();
-            $location.path("/user_profile");
+        reverseGeocodeService.get($scope.obj).then(function (obj) {
+            var gnd_id = obj.data.features[0].attributes.objectid;
+            var u_type = $scope.user_types.indexOf($scope.user);
+            console.log($scope.display);
+            registerService.register($scope.first_name, $scope.last_name, u_type, $scope.dob, $scope.phone_number, $scope.email, $scope.add_line_1, $scope.add_line_2, $scope.add_line_3, $scope.obj.prop1, $scope.obj.prop2, $scope.username, $scope.password, $scope.display,gnd_id).then(function (obj) {
+                console.log(obj.data.records[0].username);
+                $scope.open();
+                $location.path("/user_profile");
+            });
         });
     }
     $scope.name = "Select Files to Upload";
