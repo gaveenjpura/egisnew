@@ -10,6 +10,7 @@ app.controller('branchPageController', function ($scope, $rootScope, branchServi
     var user_id = sessionService.getUser();
 
     branchService.getBranchDetails(user_id).then(function (obj) {
+        console.log(obj.data);
         $scope.obj.ulat = obj.data.records[0].ulat;
         $scope.obj.ulon = obj.data.records[0].ulon;
         $scope.obj.blat = obj.data.records[0].blat;
