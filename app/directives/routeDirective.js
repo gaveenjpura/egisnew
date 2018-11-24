@@ -21,24 +21,45 @@ app.directive('mapRoute', function ($rootScope) {
             });
             marker_2.setMap(map);
             var directionsService = new google.maps.DirectionsService;
+
             var directionsDisplay = new google.maps.DirectionsRenderer({
-                map: map
+                map: map,
+                polylineOptions: {
+                    strokeColor: "blue"
+                }
+            });
+            var directionsDisplayAlternative1 = new google.maps.DirectionsRenderer({
+                map: map,
+                polylineOptions: {
+                    strokeColor: "gray"
+                }
+            });
+            var directionsDisplayAlternative2 = new google.maps.DirectionsRenderer({
+                map: map,
+                polylineOptions: {
+                    strokeColor: "gray"
+                }
             });
             directionsService.route({
                 origin: marker_1.position,
                 destination: marker_2.position,
                 avoidTolls: true,
                 avoidHighways: false,
-                travelMode: google.maps.TravelMode.DRIVING
+                travelMode: google.maps.TravelMode.DRIVING,
+                provideRouteAlternatives: true
             }, function (response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
+                    console.log(response);
                     directionsDisplay.setDirections(response);
+                    directionsDisplay.setRouteIndex(0);
+                    directionsDisplayAlternative1.setDirections(response);
+                    directionsDisplayAlternative1.setRouteIndex(1);
+                    directionsDisplayAlternative2.setDirections(response);
+                    directionsDisplayAlternative2.setRouteIndex(2);
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
-                console.log("response-" + response.routes[0].legs[0].distance.text);
-                console.log("response-" + response.routes[0].legs[0].duration.text);
-                $rootScope.setDistanceTime(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text);
+                $rootScope.setDistanceTime(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text,response.routes[1].legs[0].distance.text,response.routes[1].legs[0].duration.text,response.routes[2].legs[0].distance.text,response.routes[2].legs[0].duration.text);
             });
         }
     };

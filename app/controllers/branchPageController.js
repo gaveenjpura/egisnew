@@ -18,13 +18,25 @@ app.controller('branchPageController', function ($scope, $rootScope, branchServi
         $scope.show_map = true;
     });
 
-    $rootScope.setDistanceTime = function (distance, time) {
+    $rootScope.setDistanceTime = function (distance, time,distance_alt_1,time_alt_1,distance_alt_2,time_alt_2) {
         $rootScope.distance = distance;
         $rootScope.time = time;
+
+        $rootScope.distance_alt_1 = distance_alt_1;
+        $rootScope.time_alt_1 = time_alt_1;
+
+        $rootScope.distance_alt_2 = distance_alt_2;
+        $rootScope.time_alt_2 = time_alt_2;
     }
     $scope.click = function () {
         $scope.show_dis = true;
         $scope.distance = $rootScope.distance;
         $scope.time = $rootScope.time;
+
+        $scope.distance_alt_1 = $rootScope.distance_alt_1;
+        $scope.time_alt_1 = $rootScope.time_alt_1;
+
+        $scope.distance_alt_2 = $rootScope.distance_alt_2;
+        $scope.time_alt_2 = $rootScope.time_alt_2;
     }
 });
