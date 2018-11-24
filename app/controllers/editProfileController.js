@@ -12,6 +12,7 @@ app.controller("editProfileController", function ($scope, sessionService, userDe
     function getUserDetails() {
         var user_id = sessionService.getUser();
         userDetailsService.getUser(user_id).then(function (obj) {
+            console.log(obj.data);
             $scope.first_name = obj.data.records[0].fname;
             $scope.last_name = obj.data.records[0].lname;
             if (obj.data.records[0].user_type == 1) {
@@ -31,6 +32,10 @@ app.controller("editProfileController", function ($scope, sessionService, userDe
             $scope.add3 = obj.data.records[0].add_3;
             $scope.lat = obj.data.records[0].lat;
             $scope.lon = obj.data.records[0].lon;
+            $scope.gnd = obj.data.records[0].gnd;
+            $scope.dsd = obj.data.records[0].dsd;
+            $scope.district = obj.data.records[0].district;
+            $scope.province = obj.data.records[0].province;
             $scope.img_path = "app/backend/" + obj.data.records[0].photo.substr(3);
             $scope.obj = {
                 prop1: $scope.lat,

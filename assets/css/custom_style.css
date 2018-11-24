@@ -421,3 +421,9 @@ button {
 .branch-page .time-container{
     font-size: 20px;
 }
+.user_profile_main_container .admin-boundary-container .title{
+    margin-bottom: 15px;
+}
+.user_profile_main_container .admin-boundary-container .item-container{
+    margin-bottom: 8px;
+}
