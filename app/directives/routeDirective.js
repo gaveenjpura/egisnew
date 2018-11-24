@@ -49,7 +49,7 @@ app.directive('mapRoute', function ($rootScope) {
                 provideRouteAlternatives: true
             }, function (response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
-                    console.log(response);
+                    console.log(response.routes.length);
                     directionsDisplay.setDirections(response);
                     directionsDisplay.setRouteIndex(0);
                     directionsDisplayAlternative1.setDirections(response);
@@ -59,7 +59,15 @@ app.directive('mapRoute', function ($rootScope) {
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
-                $rootScope.setDistanceTime(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text,response.routes[1].legs[0].distance.text,response.routes[1].legs[0].duration.text,response.routes[2].legs[0].distance.text,response.routes[2].legs[0].duration.text);
+                if(response.routes.length==3) {
+                    $rootScope.setDistanceTime_3(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text, response.routes[1].legs[0].distance.text, response.routes[1].legs[0].duration.text, response.routes[2].legs[0].distance.text, response.routes[2].legs[0].duration.text);
+                }
+                if(response.routes.length==2) {
+                    $rootScope.setDistanceTime_2(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text, response.routes[1].legs[0].distance.text, response.routes[1].legs[0].duration.text);
+                }
+                if(response.routes.length==1) {
+                    $rootScope.setDistanceTime_1(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text);
+                }
             });
         }
     };

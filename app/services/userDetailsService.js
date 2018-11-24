@@ -7,11 +7,11 @@ app.service('userDetailsService', function ($http) {
             url: 'app/backend/user/getUserDetailsApi.php'
         });
     }
-    this.updateUser = function (user_id, add1, add2, add3, lat, lon) {
+    this.updateUser = function (user_id, add1, add2, add3, lat, lon,gnd) {
         return $http({
             method: 'POST',
             headers: {'Content-Type': 'application/json; charset=UTF-8'},
-            data: {'user_id': user_id, 'add1': add1, 'add2': add2, 'add3': add3, 'lat': lat, 'lon': lon},
+            data: {'user_id': user_id, 'add1': add1, 'add2': add2, 'add3': add3, 'lat': lat, 'lon': lon,'gnd':gnd},
             url: 'app/backend/user/updateUserApi.php'
         });
     }

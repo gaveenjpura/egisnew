@@ -1,4 +1,4 @@
-app.controller("editProfileController", function ($scope, sessionService, userDetailsService, countryValidationService, $uibModal, $rootScope) {
+app.controller("editProfileController", function ($scope, sessionService, userDetailsService, countryValidationService, $uibModal, $rootScope,reverseGeocodeService,$location) {
     $scope.show_map = false;
     $ctrl = this;
     getUserDetails();
@@ -84,14 +84,20 @@ app.controller("editProfileController", function ($scope, sessionService, userDe
                     flag = 1;
                 }
                 else {
-                    var user_id = sessionService.getUser();
-                    console.log(user_id);
-                    userDetailsService.updateUser(user_id, $scope.add1, $scope.add2, $scope.add3, $scope.obj.prop1, $scope.obj.prop2).then(function (obj) {
-                        console.log(obj.data.records[0].response);
-                        if (obj.data.records[0].response == 'success') {
-                            $scope.open();
-                        }
+                    reverseGeocodeService.get($scope.obj).then(function (obj) {
+                        var gnd_id = obj.data.features[0].attributes.objectid;
+                        console.log(gnd_id);
+                        var user_id = sessionService.getUser();
+                        console.log(user_id);
+                        userDetailsService.updateUser(user_id, $scope.add1, $scope.add2, $scope.add3, $scope.obj.prop1, $scope.obj.prop2,gnd_id).then(function (obj) {
+                            console.log(obj.data.records[0].response);
+                            if (obj.data.records[0].response == 'success') {
+                                $scope.open();
+                                getUserDetails();
+                            }
+                        });
                     });
+
                 }
             });
 
