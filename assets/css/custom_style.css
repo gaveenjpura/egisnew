@@ -415,15 +415,23 @@ button {
     margin-bottom: 15px;
     margin-top: 15px;
 }
-.branch-page .distance-container{
+
+.branch-page .distance-container {
     font-size: 20px;
 }
-.branch-page .time-container{
+
+.branch-page .time-container {
     font-size: 20px;
 }
-.user_profile_main_container .admin-boundary-container .title{
+
+.user_profile_main_container .admin-boundary-container .title {
     margin-bottom: 15px;
 }
-.user_profile_main_container .admin-boundary-container .item-container{
+
+.user_profile_main_container .admin-boundary-container .item-container {
     margin-bottom: 8px;
+}
+
+.add_product_main_container .add_product_secondary_container .button-container {
+    text-align: center;
 }

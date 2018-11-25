@@ -12,4 +12,7 @@ app.controller('collapseDemoCtrl', function ($scope,$location) {
     $scope.goBranchPage=function(){
         $location.path("/branch_page");
     }
+    $scope.goAddProductPage=function(){
+        $location.path("/add_product");
+    }
 });

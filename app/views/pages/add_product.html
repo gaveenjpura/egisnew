@@ -1,0 +1,63 @@
+<div class="add_product_main_container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <navigation-menu-directive></navigation-menu-directive>
+            </div>
+            <div class="col-md-8">
+                <div class="add_product_secondary_container">
+                    <div class="title">
+                        <h2>Add New Products</h2>
+                    </div>
+                    <div class="details-container">
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" class="form-control" id="product_name" ng-model="product_name">
+                        </div>
+                        <div class="form-group">
+                            <label>Product Description</label>
+                            <input type="text" class="form-control" id="product_description" ng-model="product_description">
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input type="text" class="form-control" id="product_price" ng-model="product_price">
+                        </div>
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input type="text" class="form-control" id="product_qty" ng-model="product_qty">
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="user_type" class="form-control" ng-model="category"
+                                    ng-options=""></select>
+                        </div>
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="text" class="form-control" id="date" ng-model="date">
+                        </div>
+                        <div class="form-group clearfix">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <label>Upload Profile Photo</label>
+                                    <input type="file" id="file" ng-click="$event = $event" ng-model="display" multiple
+                                           onchange="angular.element(this).scope().upload(event)"
+                                           accept="image/png, image/jpeg, image/gif"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                              <span ng-repeat='img in images'> <a href="#" ng-click="setImage($index)">
+                                <img ng-src="{{img}}"
+                                     alt="Generic placeholder thumbnail" style="max-height:100px;" class="thumbnail"/>
+                                </a>
+                              </span>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button class="btn btn-success submit-product-btn">PUBLISH PRODUCT TO STORE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

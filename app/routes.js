@@ -44,6 +44,9 @@ app.config(function($routeProvider,$locationProvider, $httpProvider) {
         .when('/branch_page', {
             templateUrl: 'app/views/pages/branch_page.html'
         })
+        .when('/add_product', {
+            templateUrl: 'app/views/pages/add_product.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
