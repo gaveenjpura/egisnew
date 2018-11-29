@@ -2,14 +2,16 @@
     <div class="btn btn-default main-item" ng-click="isCollapsedUserProfile = !isCollapsedUserProfile">
         User Profile
     </div>
-    <div class="secondary-item" uib-collapse="isCollapsedUserProfile" ng-class="{selected_navigation_tab:viewUpdateProfile}">
+    <div class="secondary-item" uib-collapse="isCollapsedUserProfile"
+         ng-class="{selected_navigation_tab:viewUpdateProfile}">
         <span>View Update Profile</span>
     </div>
     <div class="secondary-item" uib-collapse="isCollapsedUserProfile" ng-click="goBranchPage()">
         <span>Belong in Branch</span>
     </div>
 
-    <div class="btn btn-default main-item" ng-click="isCollapsedMod2 = !isCollapsedMod2">
+    <div class="btn btn-default main-item" ng-click="isCollapsedMod2 = !isCollapsedMod2"
+         ng-show="is_seller||is_buyer_and_seller">
         Product Selling
     </div>
     <div class="secondary-item" uib-collapse="isCollapsedMod2" ng-click="goAddProductPage()">

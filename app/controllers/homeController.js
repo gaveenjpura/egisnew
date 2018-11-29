@@ -5,7 +5,6 @@ app.controller('homeController', function ($scope, categoryService, $location, $
     $scope.open = function () {
 
     }
-
     $scope.category = [];
     var category_name = [];
     loadCategory();

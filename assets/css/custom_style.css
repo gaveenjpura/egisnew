@@ -435,3 +435,6 @@ button {
 .add_product_main_container .add_product_secondary_container .button-container {
     text-align: center;
 }
+.add_product_main_container .button-container{
+    margin-bottom: 20px;
+}

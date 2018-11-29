@@ -1,4 +1,4 @@
-<div class="add_product_main_container">
+<div class="add_product_main_container" ng-controller="addProductController">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -16,7 +16,8 @@
                         </div>
                         <div class="form-group">
                             <label>Product Description</label>
-                            <input type="text" class="form-control" id="product_description" ng-model="product_description">
+                            <input type="text" class="form-control" id="product_description"
+                                   ng-model="product_description">
                         </div>
                         <div class="form-group">
                             <label>Price</label>
@@ -28,17 +29,27 @@
                         </div>
                         <div class="form-group">
                             <label>Category</label>
-                            <select id="user_type" class="form-control" ng-model="category"
-                                    ng-options=""></select>
+                            <select id="user_type" class="form-control" ng-model="cat"
+                                    ng-options="item.name for item in category"></select>
                         </div>
                         <div class="form-group">
-                            <label>Date</label>
-                            <input type="text" class="form-control" id="date" ng-model="date">
+                            <label>Last Day of listing product in store</label>
+                            <input type="date" class="form-control" id="last_date" ng-model="last_date">
+                        </div>
+                        <div class="form-group clearfix">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>Date</label>
+                                </div>
+                                <div class="col-md-10">
+                                    {{date_today|date:'yyyy-MM-dd'}}
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group clearfix">
                             <div class="col-md-6">
                                 <div class="row">
-                                    <label>Upload Profile Photo</label>
+                                    <label>Upload Product Photo</label>
                                     <input type="file" id="file" ng-click="$event = $event" ng-model="display" multiple
                                            onchange="angular.element(this).scope().upload(event)"
                                            accept="image/png, image/jpeg, image/gif"/>
@@ -52,8 +63,13 @@
                               </span>
                             </div>
                         </div>
+                        <div class="error-msg-container">
+                            <span class="error-msg">
+                                {{error_msg}}
+                            </span>
+                        </div>
                         <div class="button-container">
-                            <button class="btn btn-success submit-product-btn">PUBLISH PRODUCT TO STORE</button>
+                            <button class="btn btn-success submit-product-btn" ng-click="formValidation()">PUBLISH PRODUCT TO STORE</button>
                         </div>
                     </div>
                 </div>

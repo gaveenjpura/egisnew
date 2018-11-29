@@ -129,6 +129,7 @@
     <script src="app/services/userDetailsService.js"></script>
     <script src="app/services/branchService.js"></script>
     <script src="app/services/reverseGeocodeService.js"></script>
+    <script src="app/services/productService.js"></script>
     <!--end-->
     <!--angular controllers-->
     <script src="app/controllers/registerPageController.js"></script>
@@ -144,6 +145,7 @@
     <script src="app/controllers/editProfileController.js"></script>
     <script src="app/controllers/horizontalMenuController.js"></script>
     <script src="app/controllers/branchPageController.js"></script>
+    <script src="app/controllers/addProductController.js"></script>
     <!--end-->
 </head>
 <body>
@@ -169,6 +171,19 @@
         <button class="btn btn-warning" type="button" ng-click="$ctrl.modalOk()">OK</button>
     </div>
 </script>
+
+<script type="text/ng-template" id="addProductModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">SUCCESS</h3>
+    </div>
+    <div class="modal-body">
+        Product has been added to market successfully
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.modalOk()">OK</button>
+    </div>
+</script>
+
 <script type="text/ng-template" id="errorModal.html">
     <div class="modal-header">
         <h3 class="modal-title">Error</h3>
