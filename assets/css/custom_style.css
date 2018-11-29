@@ -438,3 +438,9 @@ button {
 .add_product_main_container .button-container{
     margin-bottom: 20px;
 }
+.location_category_main_container .location_category_secondary_container .main-title{
+    text-align: center;
+    color: #f3c500;
+    font-size: 40px;
+    margin-bottom: 35px;
+}

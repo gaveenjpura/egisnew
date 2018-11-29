@@ -130,6 +130,8 @@
     <script src="app/services/branchService.js"></script>
     <script src="app/services/reverseGeocodeService.js"></script>
     <script src="app/services/productService.js"></script>
+    <script src="app/services/locationCategoryService.js"></script>
+    <script src="app/services/adminBoundaryService.js"></script>
     <!--end-->
     <!--angular controllers-->
     <script src="app/controllers/registerPageController.js"></script>
@@ -146,6 +148,7 @@
     <script src="app/controllers/horizontalMenuController.js"></script>
     <script src="app/controllers/branchPageController.js"></script>
     <script src="app/controllers/addProductController.js"></script>
+    <script src="app/controllers/locationCategoryController.js"></script>
     <!--end-->
 </head>
 <body>
@@ -208,7 +211,8 @@
                 <li><a href="/contact">Contact Us</a></li>
                 <li ng-show="login_text"><a href="/login">Login</a></li>
                 <li ng-show="profile_photo"><span class="profile-photo-circle"
-                                                  style="background-image:url('{{image__url}}');" ng-click="clickPhoto()">
+                                                  style="background-image:url('{{image__url}}');"
+                                                  ng-click="clickPhoto()">
                     <span class="logout-text" ng-click="goHomePage()" ng-show="show_logout">Log Out</span>
                 </span>
                 </li>

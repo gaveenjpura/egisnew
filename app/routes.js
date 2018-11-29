@@ -47,6 +47,9 @@ app.config(function($routeProvider,$locationProvider, $httpProvider) {
         .when('/add_product', {
             templateUrl: 'app/views/pages/add_product.html'
         })
+        .when('/location_category', {
+            templateUrl: 'app/views/pages/location_category.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

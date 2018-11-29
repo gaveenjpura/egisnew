@@ -1,4 +1,4 @@
-app.controller('homeController', function ($scope, categoryService, $location, $uibModal, $rootScope) {
+app.controller('homeController', function ($scope, categoryService, $location, $uibModal, $rootScope, sessionService) {
     $scope.items = ['item1', 'item2', 'item3'];
     $scope.animationsEnabled = true;
     var $ctrl = this;
@@ -95,5 +95,15 @@ app.controller('homeController', function ($scope, categoryService, $location, $
     }
     $scope.goSingleProduct = function () {
         $location.path("/single_product");
+    }
+    $scope.goLocationCategory = function () {
+        var user_id=sessionService.getUser();
+        if(!user_id) {
+            alert("Please first login to system");
+        }
+        else {
+            $location.path("/location_category");
+        }
+
     }
 });
