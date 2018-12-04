@@ -87,8 +87,8 @@ app.controller('homeController', function ($scope, categoryService, $location, $
     $scope.goSingleCategory = function () {
         $location.path("/single_category");
     }
-    $scope.goAllProductCategory = function () {
-        $location.path("/all_product/cat");
+    $scope.goAllProductCategory = function (cat_id,cat_name,cat_image,cat_color) {
+        $location.path("/all_product/cat").search({category_id:cat_id,category_name:cat_name,category_image:cat_image,category_color:cat_color});
     }
     $scope.goAllProduct = function () {
         $location.path("/all_product/all");
@@ -102,7 +102,12 @@ app.controller('homeController', function ($scope, categoryService, $location, $
             alert("Please first login to system");
         }
         else {
-            $location.path("/location_category");
+            if(sessionService.getType()=='buyer' || sessionService.getType()=='buyer_and_seller') {
+                $location.path("/location_category");
+            }
+            else{
+                alert("sellers are not permitted to access");
+            }
         }
 
     }

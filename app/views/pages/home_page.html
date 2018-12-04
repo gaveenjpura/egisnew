@@ -36,7 +36,8 @@
             <h2 class="home-page-category-title">Top Categories</h2>
             <div class="col-md-2 focus-grid" ng-repeat="cat_item in category" ng-hide="cat_item.flag">
                 <a>
-                    <div class="focus-border" ng-click="goAllProductCategory()">
+                    <div class="focus-border"
+                         ng-click="goAllProductCategory(cat_item.id,cat_item.name,cat_item.icon,cat_item.color)">
                         <div class="focus-layout">
                             <div class="focus-image"><i ng-class="cat_item.icon"
                                                         ng-style="{'background-color':cat_item.color}"></i>
@@ -49,7 +50,9 @@
             <div class="clearfix"></div>
             <div class="category-button-container">
                 <button class="btn btn-success all-cat-button" ng-click="goAllCategory()">SHOW ALL CATEGORIES</button>
-                <button class="btn btn-success location-cat-button" style="margin-left: 20px;" ng-click="goLocationCategory()">RECOMMENDED CATEGORIES BASED ON YOUR LOCATION</button>
+                <button class="btn btn-success location-cat-button" style="margin-left: 20px;"
+                        ng-click="goLocationCategory()">RECOMMENDED CATEGORIES BASED ON YOUR LOCATION
+                </button>
             </div>
         </div>
     </div>

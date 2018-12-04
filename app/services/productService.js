@@ -7,4 +7,12 @@ app.service('productService',function($http){
             url: 'app/backend/product/addProductApi.php'
         });
     }
+    this.recentProduct=function(){
+        return $http({
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json; charset=UTF-8'},
+            data:{'name':""},
+            url: 'app/backend/product/recentProductApi.php'
+        });
+    }
 });

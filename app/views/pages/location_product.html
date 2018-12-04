@@ -1,20 +1,20 @@
-<div class="all-product-page" ng-controller="allProductController">
+<div class="location-product-page all-product-page" ng-controller="locationProductController">
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-2">
                 <h4 class="all_category_title">Other Categories</h4>
                 <div class="focus-border focus-border-all-product" ng-repeat="cat_item in category"
-                     ng-hide="cat_item.name==category_name">
+                     ng-hide="cat_item.category_name==category_name">
                     <div class="focus-layout">
-                        <div class="focus-image"><i ng-class="cat_item.icon"
-                                                    ng-style="{'background-color':cat_item.color}"></i>
+                        <div class="focus-image"><i ng-class="cat_item.category_icon"
+                                                    ng-style="{'background-color':cat_item.category_color}"></i>
                         </div>
-                        <h4 class="clrchg">{{cat_item.name}}</h4>
+                        <h4 class="clrchg">{{cat_item.category_name}}</h4>
                     </div>
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="single-title-container" ng-show="cat">
+                <div class="single-title-container">
                     <div class="focus-border focus-border-all-product">
                         <div class="focus-layout">
                             <div class="focus-image"><i ng-class="category_image"
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-                <h2 class="all_product_title" ng-show="all">All Products</h2>
+                <h2 class="all_product_title">All Products Available in {{admin_boundary}}</h2>
                 <div class="adbox clearfix" ng-repeat="item in products">
                     <div class="col-md-6">
                         <div class="image-container">

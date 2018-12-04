@@ -1,4 +1,4 @@
-app.controller("recentSliderController",function($scope){
+app.controller("recentSliderController",function($scope,productService){
     /*slider**/
     $scope.myInterval = 12000;
     $scope.noWrapSlides = false;
@@ -6,7 +6,17 @@ app.controller("recentSliderController",function($scope){
     var slides = $scope.slides = [];
     var currIndex = 0;
     var image_index = 0;
-    var images = [{image:"assets/images/products/p4.gif",title:"Phm Oils",qty:"12"}, {image:"assets/images/products/p7.jpg",title:"BVC Snacks",qty:"20"}, {image:"assets/images/products/p8.jpg",title:"DELL Laptop",qty:"100"}, {image:"assets/images/products/p4.gif",title:"XZA Oils",qty:"45"},{image:"assets/images/products/p7.jpg",title:"KLZ Biscuits",qty:"60"},{image:"assets/images/products/p8.jpg",title:"HP Laptop",qty:"54"},{image:"assets/images/products/p4.gif",title:"K Oils",qty:"67"},{image:"assets/images/products/p7.jpg",title:"MM Biscuit",qty:"50"}];
+    var images = [];
+    productService.recentProduct().then(function(obj){
+        images=obj.data.records;
+        for(var i=0;i<images.length;++i){
+            images[i].image="app/backend/"+images[i].image.substr(3);
+        }
+        console.log(images);
+        for (var k = 0; k < images.length; k++) {
+            $scope.addSlide();
+        }
+    });
     $scope.addSlide = function () {
         slides.push({
             image: images[image_index].image,
@@ -22,9 +32,7 @@ app.controller("recentSliderController",function($scope){
         assignNewIndexesToSlides(indexes);
     };
 
-    for (var i = 0; i < 8; i++) {
-        $scope.addSlide();
-    }
+
 
     // Randomize logic below
 

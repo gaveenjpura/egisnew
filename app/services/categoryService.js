@@ -8,4 +8,12 @@ app.service('categoryService', function ($http) {
             url: 'app/backend/category/categoryApi.php'
         });
     }
+    this.loadSingleCategory=function(cat_id){
+        return $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            data: {'cat_id':cat_id},
+            url: 'app/backend/category/singleCategory/singleCategoryApi.php'
+        });
+    }
 });
