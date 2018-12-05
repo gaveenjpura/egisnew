@@ -21,6 +21,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
         var user_id=sessionService.getUser();
         locationProductService.locationGnd($scope.category_id, $scope.gnd_id,user_id).then(function (obj) {
             $scope.products=obj.data.records;
+            console.log($scope.products);
             for(var i=0;i<$scope.products.length;++i){
                 $scope.products[i].image="app/backend/"+$scope.products[i].image.substr(3);
             }
@@ -31,6 +32,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
         var user_id=sessionService.getUser();
         locationProductService.locationDsd($scope.category_id, $scope.dsd_id,user_id).then(function (obj) {
             $scope.products=obj.data.records;
+            console.log($scope.products);
             for(var i=0;i<$scope.products.length;++i){
                 $scope.products[i].image="app/backend/"+$scope.products[i].image.substr(3);
             }
@@ -41,6 +43,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
         var user_id=sessionService.getUser();
         locationProductService.locationDistrict($scope.category_id, $scope.district_id,user_id).then(function (obj) {
             $scope.products=obj.data.records;
+            console.log($scope.products);
             for(var i=0;i<$scope.products.length;++i){
                 $scope.products[i].image="app/backend/"+$scope.products[i].image.substr(3);
             }

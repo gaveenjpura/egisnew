@@ -6,8 +6,9 @@ $conn = new mysqli("localhost", "root", "", "egis");
 $district_id=$user->district_id;
 $cat_id=$user->cat_id;
 $user_id=$user->user_id;
-$result=$conn->query("SELECT distinct p.product_id as product_id,p.name as product_name,p.price as product_price,p.qty as product_qty,p.description as product_description,p.image as image FROM product p, category c, user u, gnd g,dsd d,district dis,province pro WHERE p.cat_id = c.id AND p.seller_id = u.user_id AND u.gnd = g.gnd_id AND c.id ='$cat_id' AND g.dsd_id=d.dsd_id and d.district_id=dis.district_id and dis.district_id='$district_id' AND p.seller_id<>'$user_id'");
+$result=$conn->query("SELECT distinct p.product_id as product_id,p.name as product_name,p.price as product_price,p.qty as product_qty,p.description as product_description,p.image as image,u.lat as home_lat,u.lon as home_lon,bra.lat as branch_lat,bra.lon as branch_lon FROM product p, category c, user u, gnd g,dsd d,district dis,province pro,branch bra WHERE p.cat_id = c.id AND p.seller_id = u.user_id AND u.gnd = g.gnd_id AND c.id ='$cat_id' AND g.dsd_id=d.dsd_id and d.district_id=dis.district_id and dis.district_id='$district_id' AND p.seller_id<>'$user_id' AND u.branch_id=bra.branch_id");
 $outp = "";
+$travel_time="";
 while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 	 if ($outp != "") {
         $outp .= ",";
@@ -17,6 +18,11 @@ while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 	$outp .= '"price":"' . $rs["product_price"] . '",';
 	$outp .= '"qty":"' . $rs["product_qty"] . '",';
 	$outp .= '"image":"' . $rs["image"] . '",';
+	$outp .= '"home_lat":"' . $rs["home_lat"] . '",';
+	$outp .= '"home_lon":"' . $rs["home_lon"] . '",';
+	$outp .= '"branch_lat":"' . $rs["branch_lat"] . '",';
+	$outp .= '"branch_lon":"' . $rs["branch_lon"] . '",';
+	$outp .= '"travel_time":"' . $travel_time . '",';
 	$outp .= '"description":"' . $rs["product_description"] . '"}';
 }
 $outp = '{"records":[' . $outp . ']}';
