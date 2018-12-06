@@ -1,4 +1,4 @@
-app.controller('locationProductController', function ($scope, $location, locationProductService,sessionService) {
+app.controller('locationProductController', function ($scope, $location, locationProductService, sessionService, googleDirectionsService) {
     $scope.category = [];
     $scope.category = $location.search().cat_array;
     $scope.category_image = $location.search().icon;
@@ -15,49 +15,74 @@ app.controller('locationProductController', function ($scope, $location, locatio
     $scope.province_id = $location.search().province_id;
     $scope.province_name = $location.search().province_name;
     $scope.products = [];
+    $scope.sorted_products = [];
 
     if ($scope.category_type == 'gnd') {
-        $scope.admin_boundary=$scope.gnd_name+" "+"grama niladhari division";
-        var user_id=sessionService.getUser();
-        locationProductService.locationGnd($scope.category_id, $scope.gnd_id,user_id).then(function (obj) {
-            $scope.products=obj.data.records;
+        $scope.admin_boundary = $scope.gnd_name + " " + "grama niladhari division";
+        var user_id = sessionService.getUser();
+        locationProductService.locationGnd($scope.category_id, $scope.gnd_id, user_id).then(function (obj) {
+            $scope.products = obj.data.records;
             console.log($scope.products);
-            for(var i=0;i<$scope.products.length;++i){
-                $scope.products[i].image="app/backend/"+$scope.products[i].image.substr(3);
+            for (var i = 0; i < $scope.products.length; ++i) {
+                $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
             }
         });
     }
     if ($scope.category_type == 'dsd') {
-        $scope.admin_boundary=$scope.dsd_name+" "+"divisional secretariast division";
-        var user_id=sessionService.getUser();
-        locationProductService.locationDsd($scope.category_id, $scope.dsd_id,user_id).then(function (obj) {
-            $scope.products=obj.data.records;
+        $scope.admin_boundary = $scope.dsd_name + " " + "divisional secretariast division";
+        var user_id = sessionService.getUser();
+        locationProductService.locationDsd($scope.category_id, $scope.dsd_id, user_id).then(function (obj) {
+            $scope.products = obj.data.records;
             console.log($scope.products);
-            for(var i=0;i<$scope.products.length;++i){
-                $scope.products[i].image="app/backend/"+$scope.products[i].image.substr(3);
+            for (var i = 0; i < $scope.products.length; ++i) {
+                $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
             }
         });
     }
     if ($scope.category_type == 'district') {
-        $scope.admin_boundary=$scope.district_name+" "+"district";
-        var user_id=sessionService.getUser();
-        locationProductService.locationDistrict($scope.category_id, $scope.district_id,user_id).then(function (obj) {
-            $scope.products=obj.data.records;
+        $scope.admin_boundary = $scope.district_name + " " + "district";
+        var user_id = sessionService.getUser();
+        locationProductService.locationDistrict($scope.category_id, $scope.district_id, user_id).then(function (obj) {
+            $scope.products = obj.data.records;
             console.log($scope.products);
-            for(var i=0;i<$scope.products.length;++i){
-                $scope.products[i].image="app/backend/"+$scope.products[i].image.substr(3);
+            for (var i = 0; i < $scope.products.length; ++i) {
+                $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
             }
         });
     }
     if ($scope.category_type == 'province') {
-        $scope.admin_boundary=$scope.province_name+" "+"province";
-        var user_id=sessionService.getUser();
-        locationProductService.locationProvince($scope.category_id, $scope.province_id,user_id).then(function (obj) {
-            $scope.products=obj.data.records;
+        $scope.admin_boundary = $scope.province_name + " " + "province";
+        var user_id = sessionService.getUser();
+        locationProductService.locationProvince($scope.category_id, $scope.province_id, user_id).then(function (obj) {
+            $scope.products = obj.data.records;
             console.log($scope.products);
-            for(var i=0;i<$scope.products.length;++i){
-                $scope.products[i].image="app/backend/"+$scope.products[i].image.substr(3);
+            for (var i = 0; i < $scope.products.length; ++i) {
+                $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
+                googleDirectionsService.getDirection($scope.products[i]);
             }
+            setTimeout(function () {
+                bubbleSort($scope.products);
+                $scope.sorted_products.length = 0;
+                $scope.sorted_products = $scope.products;
+                $scope.$apply();
+                console.log($scope.sorted_products);
+            }, 6000);
         });
+    }
+
+    function bubbleSort(a) {
+        var swapped;
+        do {
+            swapped = false;
+            for (var i = 0; i < a.length - 1; i++) {
+                if (a[i].travel_time > a[i + 1].travel_time) {
+                    var temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+        } while (swapped);
+
     }
 });
