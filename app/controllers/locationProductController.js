@@ -25,7 +25,21 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
+                googleDirectionsService.getDirection($scope.products[i]);
             }
+            setTimeout(function(){
+                for (var k = 0; k < $scope.products.length; ++k) {
+                    googleDirectionsService.getDirection_2($scope.products[k]);
+                }
+            },6000);
+            setTimeout(function () {
+                console.log($scope.products);
+                bubbleSort($scope.products);
+                $scope.sorted_products.length = 0;
+                $scope.sorted_products = $scope.products;
+                $scope.$apply();
+                console.log($scope.sorted_products);
+            }, 6000);
         });
     }
     if ($scope.category_type == 'dsd') {
@@ -36,7 +50,21 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
+                googleDirectionsService.getDirection($scope.products[i]);
             }
+            setTimeout(function(){
+                for (var k = 0; k < $scope.products.length; ++k) {
+                    googleDirectionsService.getDirection_2($scope.products[k]);
+                }
+            },6000);
+            setTimeout(function () {
+                console.log($scope.products);
+                bubbleSort($scope.products);
+                $scope.sorted_products.length = 0;
+                $scope.sorted_products = $scope.products;
+                $scope.$apply();
+                console.log($scope.sorted_products);
+            }, 6000);
         });
     }
     if ($scope.category_type == 'district') {
@@ -47,7 +75,21 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
+                googleDirectionsService.getDirection($scope.products[i]);
             }
+            setTimeout(function(){
+                for (var k = 0; k < $scope.products.length; ++k) {
+                    googleDirectionsService.getDirection_2($scope.products[k]);
+                }
+            },6000);
+            setTimeout(function () {
+                console.log($scope.products);
+                bubbleSort($scope.products);
+                $scope.sorted_products.length = 0;
+                $scope.sorted_products = $scope.products;
+                $scope.$apply();
+                console.log($scope.sorted_products);
+            }, 6000);
         });
     }
     if ($scope.category_type == 'province') {
