@@ -33,7 +33,7 @@ app.controller('loginPageController', function ($scope, $location, loginService,
             loginService.checkLogin($scope.email,$scope.password).then(function (obj) {
                 if(obj.data.records.length>0){
                     console.log(obj.data.records[0]);
-                    sessionService.setUser(obj.data.records[0].user_id,obj.data.records[0].type);
+                    sessionService.setUser(obj.data.records[0].user_id,obj.data.records[0].type,obj.data.records[0].lat,obj.data.records[0].lon);
                     $location.path("/user_profile");
                 }
                 else{

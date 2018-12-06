@@ -9,6 +9,7 @@ $user_id=$user->user_id;
 $result=$conn->query("SELECT distinct p.product_id as product_id,p.name as product_name,p.price as product_price,p.qty as product_qty,p.description as product_description,p.image as image,u.lat as home_lat,u.lon as home_lon,bra.lat as branch_lat,bra.lon as branch_lon FROM product p, category c, user u, gnd g,dsd d,district dis,province pro,branch bra WHERE p.cat_id = c.id AND p.seller_id = u.user_id AND u.gnd = g.gnd_id AND c.id ='$cat_id' AND g.dsd_id=d.dsd_id and d.district_id=dis.district_id and dis.province_id=pro.province_id and pro.province_id='$province_id' AND p.seller_id<>'$user_id' and u.branch_id=bra.branch_id");
 $outp = "";
 $travel_time="0";
+$travel_branch_home=0;
 while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 	 if ($outp != "") {
         $outp .= ",";

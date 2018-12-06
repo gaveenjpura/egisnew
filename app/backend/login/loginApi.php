@@ -5,7 +5,7 @@ $user = json_decode(file_get_contents("php://input"));
 $conn = new mysqli("localhost", "root", "", "egis");
 $pass = $user->password;
 $username=$user->username;
-$result = $conn->query("SELECT username,password,user_id FROM login where username='$username' and password='$pass'");
+$result = $conn->query("SELECT l.username as username,l.password as password,l.user_id as user_id,u.lat as lat,u.lon as lon FROM login l,user u where l.user_id=u.user_id and l.username='$username' and l.password='$pass'");
 $outp = "";
 $type="";
 while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -30,6 +30,8 @@ while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     }
     $outp .= '{"username":"' . $rs["username"] . '",';
     $outp .= '"password":"' . $rs["password"] . '",';
+	$outp .= '"lat":"' . $rs["lat"] . '",';
+	$outp .= '"lon":"' . $rs["lon"] . '",';
 	$outp .= '"type":"' . $type . '",';
     $outp .= '"user_id":"' . $rs["user_id"] . '"}';
 }

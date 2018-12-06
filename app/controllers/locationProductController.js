@@ -60,7 +60,13 @@ app.controller('locationProductController', function ($scope, $location, locatio
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
                 googleDirectionsService.getDirection($scope.products[i]);
             }
+            setTimeout(function(){
+                for (var k = 0; k < $scope.products.length; ++k) {
+                    googleDirectionsService.getDirection_2($scope.products[k]);
+                }
+            },6000);
             setTimeout(function () {
+                console.log($scope.products);
                 bubbleSort($scope.products);
                 $scope.sorted_products.length = 0;
                 $scope.sorted_products = $scope.products;
@@ -83,6 +89,6 @@ app.controller('locationProductController', function ($scope, $location, locatio
                 }
             }
         } while (swapped);
-
+        console.log(a);
     }
 });

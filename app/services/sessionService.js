@@ -1,9 +1,24 @@
 app.service("sessionService", function ($timeout) {
     this.user_id = "";
     this.user_type = "";
-    this.setUser = function (id, user_types) {
+    this.lat = "";
+    this.lon = "";
+    this.setUser = function (id, user_types, lat, lon) {
         this.user_id = id;
-        this.user_type = user_types;
+        if (user_types == 0) {
+            this.user_type = 'buyer';
+        }
+        else if (user_types == 1) {
+            this.user_type = 'seller';
+        }
+        else if (user_types == 2) {
+            this.user_type = 'buyer_and_seller';
+        }
+        else {
+            this.user_type = user_types;
+        }
+        this.lat = lat;
+        this.lon = lon;
         return $timeout(function () {
             return {
                 property: this.user_id
@@ -18,5 +33,11 @@ app.service("sessionService", function ($timeout) {
     }
     this.clearUser = function () {
         this.user_id = "";
+    }
+    this.getUserCoordinates = function () {
+        return {
+            lat: this.lat,
+            lon: this.lon
+        };
     }
 });
