@@ -33,6 +33,9 @@ app.service("sessionService", function ($timeout) {
     }
     this.clearUser = function () {
         this.user_id = "";
+        this.user_type = "";
+        this.lat = "";
+        this.lon = "";
     }
     this.getUserCoordinates = function () {
         return {

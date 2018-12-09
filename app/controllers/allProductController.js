@@ -1,4 +1,4 @@
-app.controller("allProductController", function ($scope, categoryService, $location, $routeParams) {
+app.controller("allProductController", function ($scope, categoryService, $location, $routeParams,productBrowseService,sessionService) {
     $scope.category = [];
     $scope.products = [];
     $scope.number = 10;
@@ -14,7 +14,26 @@ app.controller("allProductController", function ($scope, categoryService, $locat
     $scope.getNum = function (num) {
         return new Array(num);
     }
-
+    $scope.viewProduct=function(product_id){
+        var user_id=sessionService.getUser();
+        if(sessionService.getType()=='buyer_and_seller' || sessionService.getType()=='buyer') {
+            if (sessionService.getType() == 'buyer_and_seller') {
+                productBrowseService.addBrowseDetails(user_id, product_id).then(function (obj) {
+                    console.log(obj);
+                });
+            }
+            if (sessionService.getType() == 'buyer') {
+                productBrowseService.addBrowseDetails_2(user_id, product_id).then(function (obj) {
+                    console.log(obj);
+                });
+            }
+            $location.search({});
+            $location.path("/single_product");
+        }
+        else{
+            alert("sellers do not have permissions to access this page");
+        }
+    }
     function loadCategory() {
         categoryService.loadCategory().then(function (res) {
             $scope.category = res.data.records;
