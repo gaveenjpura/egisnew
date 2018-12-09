@@ -31,7 +31,7 @@ app.controller("allProductController", function ($scope, categoryService, $locat
             $location.path("/single_product");
         }
         else{
-            alert("sellers do not have permissions to access this page");
+            alert("please log as a buyer or a buyer & seler");
         }
     }
     function loadCategory() {
@@ -56,5 +56,8 @@ app.controller("allProductController", function ($scope, categoryService, $locat
             $scope.all = true;
             $scope.cat = false;
         }
+    }
+    $scope.goAllProductCategory = function (cat_id,cat_name,cat_image,cat_color) {
+        $location.path("/all_product/cat").search({category_id:cat_id,category_name:cat_name,category_image:cat_image,category_color:cat_color});
     }
 });

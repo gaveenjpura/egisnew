@@ -4,7 +4,7 @@
             <div class="col-md-2">
                 <h4 class="all_category_title">Other Categories</h4>
                 <div class="focus-border focus-border-all-product" ng-repeat="cat_item in category"
-                     ng-hide="cat_item.category_name==category_name">
+                     ng-hide="cat_item.category_name==category_name" ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,category,cat_item.category_id,category_type)">
                     <div class="focus-layout">
                         <div class="focus-image"><i ng-class="cat_item.category_icon"
                                                     ng-style="{'background-color':cat_item.category_color}"></i>

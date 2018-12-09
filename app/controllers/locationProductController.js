@@ -27,11 +27,11 @@ app.controller('locationProductController', function ($scope, $location, locatio
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
                 googleDirectionsService.getDirection($scope.products[i]);
             }
-            setTimeout(function(){
+            setTimeout(function () {
                 for (var k = 0; k < $scope.products.length; ++k) {
                     googleDirectionsService.getDirection_2($scope.products[k]);
                 }
-            },6000);
+            }, 6000);
             setTimeout(function () {
                 console.log($scope.products);
                 bubbleSort($scope.products);
@@ -52,11 +52,11 @@ app.controller('locationProductController', function ($scope, $location, locatio
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
                 googleDirectionsService.getDirection($scope.products[i]);
             }
-            setTimeout(function(){
+            setTimeout(function () {
                 for (var k = 0; k < $scope.products.length; ++k) {
                     googleDirectionsService.getDirection_2($scope.products[k]);
                 }
-            },6000);
+            }, 6000);
             setTimeout(function () {
                 console.log($scope.products);
                 bubbleSort($scope.products);
@@ -77,11 +77,11 @@ app.controller('locationProductController', function ($scope, $location, locatio
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
                 googleDirectionsService.getDirection($scope.products[i]);
             }
-            setTimeout(function(){
+            setTimeout(function () {
                 for (var k = 0; k < $scope.products.length; ++k) {
                     googleDirectionsService.getDirection_2($scope.products[k]);
                 }
-            },6000);
+            }, 6000);
             setTimeout(function () {
                 console.log($scope.products);
                 bubbleSort($scope.products);
@@ -102,11 +102,11 @@ app.controller('locationProductController', function ($scope, $location, locatio
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
                 googleDirectionsService.getDirection($scope.products[i]);
             }
-            setTimeout(function(){
+            setTimeout(function () {
                 for (var k = 0; k < $scope.products.length; ++k) {
                     googleDirectionsService.getDirection_2($scope.products[k]);
                 }
-            },6000);
+            }, 6000);
             setTimeout(function () {
                 console.log($scope.products);
                 bubbleSort($scope.products);
@@ -132,5 +132,25 @@ app.controller('locationProductController', function ($scope, $location, locatio
             }
         } while (swapped);
         console.log(a);
+    }
+
+    $scope.goLocationProduct = function (name, icon, color, cat_array, id, type) {
+        $location.search({});
+        $location.path("/location_product").search({
+            name: name,
+            icon: icon,
+            color: color,
+            cat_array: cat_array,
+            cat_id: id,
+            cat_type: type,
+            gnd_name: $scope.gnd_name,
+            gnd_id: $scope.gnd_id,
+            dsd_name: $scope.dsd_name,
+            dsd_id: $scope.dsd_id,
+            district_name: $scope.district_name,
+            district_id: $scope.district_id,
+            province_name: $scope.province_name,
+            province_id: $scope.province_id
+        });
     }
 });
