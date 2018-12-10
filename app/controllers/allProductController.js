@@ -28,7 +28,7 @@ app.controller("allProductController", function ($scope, categoryService, $locat
                 });
             }
             $location.search({});
-            $location.path("/single_product");
+            $location.path("/single_product").search({product_id:product_id});
         }
         else{
             alert("please log as a buyer or a buyer & seler");

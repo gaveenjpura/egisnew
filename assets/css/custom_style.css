@@ -435,21 +435,70 @@ button {
 .add_product_main_container .add_product_secondary_container .button-container {
     text-align: center;
 }
-.add_product_main_container .button-container{
+
+.add_product_main_container .button-container {
     margin-bottom: 20px;
 }
-.location_category_main_container .location_category_secondary_container .main-title{
+
+.location_category_main_container .location_category_secondary_container .main-title {
     text-align: center;
     color: #f3c500;
     font-size: 40px;
     margin-bottom: 35px;
 }
-.location_category_main_container .location_category_secondary_container .sub-title{
+
+.location_category_main_container .location_category_secondary_container .sub-title {
     color: #f3c500;
     font-size: 32px;
     margin-bottom: 35px;
 }
-.location_category_main_container .location_category_secondary_container .sub-sub-title{
+
+.location_category_main_container .location_category_secondary_container .sub-sub-title {
     font-size: 27px;
     margin-bottom: 35px;
+}
+
+.single-product-page-main-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.single-product-page-main-container .single-product-page-secondary-container .image-container {
+    text-align: center;
+    border: 1px solid springgreen;
+    padding: 15px 15px;
+    margin-bottom: 20px;
+}
+
+.single-product-page-main-container .single-product-page-secondary-container .image-container img {
+    width: 75%;
+}
+
+.single-product-page-main-container .single-product-page-secondary-container .information-container {
+
+}
+
+.single-product-page-main-container .single-product-page-secondary-container .button-container {
+    text-align: center;
+}
+
+.single-product-page-main-container .single-product-page-secondary-container .button-container button {
+    width: 120px;
+}
+
+.single-product-page-main-container .single-product-page-secondary-container .button-container .add-cart-btn {
+    margin-right: 20px;
+}
+
+.single-product-page-main-container .single-product-page-secondary-container .information-container .item {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.single-product-page-main-container .single-product-page-secondary-container .cart-icon-container {
+    text-align: center;
+}
+
+.single-product-page-main-container .single-product-page-secondary-container .cart-icon-container i {
+    font-size: 200px;
 }

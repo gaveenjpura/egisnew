@@ -1,18 +1,47 @@
-<div class="single-product-page-main-container">
+<div class="single-product-page-main-container" ng-controller="singleProductController">
     <div class="container">
         <div class="row">
             <div class="single-product-page-secondary-container">
-                <div class="image-container">
-
+                <div class="col-md-6">
+                    <div class="image-container">
+                        <img ng-src="{{image}}"/>
+                    </div>
+                    <div class="information-container">
+                        <div class="item clearfix">
+                            <div class="col-md-7">Name</div>
+                            <div class="col-md-5">{{name}}</div>
+                        </div>
+                        <div class="item clearfix">
+                            <div class="col-md-7">Description</div>
+                            <div class="col-md-5">{{description}}</div>
+                        </div>
+                        <div class="item clearfix">
+                            <div class="col-md-7">Price</div>
+                            <div class="col-md-5">{{price}}</div>
+                        </div>
+                        <div class="item clearfix">
+                            <div class="col-md-7">Avilable Quantity</div>
+                            <div class="col-md-5">{{qty}}</div>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <button class="btn btn-success view-map" ng-click="viewMap()" style="margin-bottom: 15px;">CLICK HERE TO SHOW ESTIMATED DELIVERY TIME ON MAP</button>
+                        <order-directive id="map" location="obj" ng-if="show_map"></order-directive>
+                        {{distance}}
+                    </div>
+                    <div class="purchasing-qty-container clearfix" style="margin-bottom: 15px;font-size: 20px;margin-top: 15px;">
+                        <div class="col-md-7">Purchasing Quantity</div>
+                        <div class="col-md-5"><input type="text" ng-model="purchasing_qty" class="form-control"/></div>
+                    </div>
+                    <div class="button-container">
+                        <button class="btn btn-success add-cart-btn">ADD TO CART</button>
+                        <button class="btn btn-success checkout-btn">BACK</button>
+                    </div>
                 </div>
-                <div class="information-container">
-
-                </div>
-                <div class="map-container">
-
-                </div>
-                <div class="button-container">
-
+                <div class="col-md-6">
+                    <div class="cart-icon-container">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                 </div>
             </div>
         </div>

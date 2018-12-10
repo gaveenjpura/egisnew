@@ -15,4 +15,12 @@ app.service('productService',function($http){
             url: 'app/backend/product/recentProductApi.php'
         });
     }
+    this.getSingleProduct=function(product_id){
+        return $http({
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json; charset=UTF-8'},
+            data:{'product_id':product_id},
+            url: 'app/backend/product/viewSingleProductApi.php'
+        });
+    }
 });
