@@ -1,7 +1,8 @@
-app.controller('singleProductController', function ($scope, productService, $location,$rootScope) {
+app.controller('singleProductController', function ($scope, productService, $location,$rootScope,sessionService) {
     $scope.show_map=false;
     $rootScope.distance="";
     var product_id = $location.search().product_id;
+    var client_coordinates=sessionService.getUserCoordinates();
     $scope.viewMap=function(){
         $scope.show_map=true;
     }
@@ -16,7 +17,6 @@ app.controller('singleProductController', function ($scope, productService, $loc
         $scope.blon = obj.data.records[0].branch_lon;
         $scope.ulat=obj.data.records[0].user_lat;
         $scope.ulon=obj.data.records[0].user_lon;
-        $scope.obj={blat:$scope.blat,blon:$scope.blon,ulat:$scope.ulat,ulon:$scope.ulon};
-
+        $scope.obj={blat:$scope.blat,blon:$scope.blon,ulat:$scope.ulat,ulon:$scope.ulon,clat:client_coordinates.lat,clon:client_coordinates.lon};
     });
 });

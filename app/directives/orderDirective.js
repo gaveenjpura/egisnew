@@ -1,10 +1,10 @@
 app.directive('orderDirective', function ($rootScope) {
     return {
         restrict: 'E',
-        scope:{
+        scope: {
             location: "="
         },
-        link: function (scope, element,attrs) {
+        link: function (scope, element, attrs) {
             var mapOptions = {
                 zoom: 7,
                 center: new google.maps.LatLng(7.0008, 80.7733)
@@ -20,24 +20,23 @@ app.directive('orderDirective', function ($rootScope) {
                 animation: google.maps.Animation.BOUNCE
             });
             marker_2.setMap(map);
+            var marker_3 = new google.maps.Marker({
+                position: new google.maps.LatLng(scope.location.clat, scope.location.clon),
+                animation: google.maps.Animation.BOUNCE
+            });
+            marker_3.setMap(map);
             var directionsService = new google.maps.DirectionsService;
-
+            var directionsService2 = new google.maps.DirectionsService;
             var directionsDisplay = new google.maps.DirectionsRenderer({
                 map: map,
                 polylineOptions: {
                     strokeColor: "blue"
                 }
             });
-            var directionsDisplayAlternative1 = new google.maps.DirectionsRenderer({
+            var directionsDisplay2 = new google.maps.DirectionsRenderer({
                 map: map,
                 polylineOptions: {
-                    strokeColor: "gray"
-                }
-            });
-            var directionsDisplayAlternative2 = new google.maps.DirectionsRenderer({
-                map: map,
-                polylineOptions: {
-                    strokeColor: "gray"
+                    strokeColor: "red"
                 }
             });
             directionsService.route({
@@ -55,8 +54,32 @@ app.directive('orderDirective', function ($rootScope) {
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
-                if(response.routes.length==1) {
-                    $rootScope.distance=response.routes[0].legs[0].distance.text;
+                if (response.routes.length == 1) {
+                    $rootScope.duration = response.routes[0].legs[0].duration.value;
+                    $rootScope.$apply();
+                    //$rootScope.setDistanceTime_1(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text);
+                }
+            });
+
+            directionsService2.route({
+                origin: marker_2.position,
+                destination: marker_3.position,
+                avoidTolls: true,
+                avoidHighways: false,
+                travelMode: google.maps.TravelMode.DRIVING,
+                provideRouteAlternatives: false
+            }, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    console.log(response.routes.length);
+                    directionsDisplay2.setDirections(response);
+                    directionsDisplay2.setRouteIndex(0);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+                if (response.routes.length == 1) {
+                    $rootScope.duration = $rootScope.duration+response.routes[0].legs[0].duration.value;
+                    $rootScope.duration = $rootScope.duration/3600;
+                    $rootScope.duration=$rootScope.duration.toFixed(2);
                     $rootScope.$apply();
                     //$rootScope.setDistanceTime_1(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text);
                 }
