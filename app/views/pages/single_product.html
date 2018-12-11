@@ -28,9 +28,11 @@
                         <button class="btn btn-success view-map" ng-click="viewMap()" style="margin-bottom: 15px;">CLICK
                             HERE TO SHOW ESTIMATED DELIVERY TIME ON MAP
                         </button>
-                        <order-directive id="map" location="obj" ng-if="show_map" style="margin-bottom: 20px;"></order-directive>
+                        <order-directive id="map" location="obj" ng-if="show_map"
+                                         style="margin-bottom: 20px;"></order-directive>
                         <div class="col-md-8">
-                            <span ng-if="show_map" style="font-size: 20px;">Estimated Travel Time of Product Delivery</span>
+                            <span ng-if="show_map"
+                                  style="font-size: 20px;">Estimated Travel Time of Product Delivery</span>
                         </div>
                         <div class="col-md-4">
                             <span ng-if="show_map" style="font-size: 20px;">{{duration}} hours</span>
@@ -42,13 +44,36 @@
                         <div class="col-md-5"><input type="text" ng-model="purchasing_qty" class="form-control"/></div>
                     </div>
                     <div class="button-container">
-                        <button class="btn btn-success add-cart-btn">ADD TO CART</button>
-                        <button class="btn btn-success checkout-btn">BACK</button>
+                        <button class="btn btn-success add-cart-btn" ng-click="addToCart()">ADD TO CART</button>
+                        <button class="btn btn-success checkout-btn" ng-click="goBack()">BACK</button>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="cart-icon-container">
                         <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="cart-details-container">
+                        <div class="cart-detail-item clearfix" style="margin-top: 20px;font-size: 16px;">
+                            <div class="col-md-9">
+                                <span>No of Product Catalogs</span>
+                            </div>
+                            <div class="col-md-3">
+                                <span>{{no_products}}</span>
+                            </div>
+                        </div>
+                        <div class="cart-detail-item clearfix" style="margin-top: 20px;font-size: 16px;">
+                            <div class="col-md-9">
+                                <span>Total Price</span>
+                            </div>
+                            <div class="col-md-3">
+                                <span>{{total_price}}/=</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button class="btn btn-success btn-checkout" style="margin-top: 30px;">
+                            CHECKOUT
+                        </button>
                     </div>
                 </div>
             </div>

@@ -9,6 +9,7 @@ app.directive('orderDirective', function ($rootScope) {
                 zoom: 7,
                 center: new google.maps.LatLng(7.0008, 80.7733)
             };
+            $rootScope.duration = 0;
             var map = new google.maps.Map(element[0], mapOptions);
             var marker_1 = new google.maps.Marker({
                 position: new google.maps.LatLng(scope.location.ulat, scope.location.ulon),
@@ -77,9 +78,8 @@ app.directive('orderDirective', function ($rootScope) {
                     window.alert('Directions request failed due to ' + status);
                 }
                 if (response.routes.length == 1) {
-                    $rootScope.duration = $rootScope.duration+response.routes[0].legs[0].duration.value;
-                    $rootScope.duration = $rootScope.duration/3600;
-                    $rootScope.duration=$rootScope.duration.toFixed(2);
+                    $rootScope.duration = $rootScope.duration + response.routes[0].legs[0].duration.value;
+                    $rootScope.duration = ($rootScope.duration / 3600).toFixed(2);
                     $rootScope.$apply();
                     //$rootScope.setDistanceTime_1(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text);
                 }
