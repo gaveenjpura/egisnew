@@ -25,7 +25,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
-                $scope.products[i].remain_qty= $scope.products[i].qty- $scope.products[i].purchased_qty;
+                $scope.products[i].remain_qty = $scope.products[i].qty - $scope.products[i].purchased_qty;
                 googleDirectionsService.getDirection($scope.products[i]);
             }
             setTimeout(function () {
@@ -51,7 +51,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
-                $scope.products[i].remain_qty= $scope.products[i].qty- $scope.products[i].purchased_qty;
+                $scope.products[i].remain_qty = $scope.products[i].qty - $scope.products[i].purchased_qty;
                 googleDirectionsService.getDirection($scope.products[i]);
             }
             setTimeout(function () {
@@ -77,7 +77,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
-                $scope.products[i].remain_qty= $scope.products[i].qty- $scope.products[i].purchased_qty;
+                $scope.products[i].remain_qty = $scope.products[i].qty - $scope.products[i].purchased_qty;
                 googleDirectionsService.getDirection($scope.products[i]);
             }
             setTimeout(function () {
@@ -103,7 +103,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
-                $scope.products[i].remain_qty= $scope.products[i].qty- $scope.products[i].purchased_qty;
+                $scope.products[i].remain_qty = $scope.products[i].qty - $scope.products[i].purchased_qty;
                 googleDirectionsService.getDirection($scope.products[i]);
             }
             setTimeout(function () {
@@ -120,6 +120,10 @@ app.controller('locationProductController', function ($scope, $location, locatio
                 console.log($scope.sorted_products);
             }, 6000);
         });
+    }
+    $scope.viewProduct = function (product_id) {
+        $location.search({});
+        $location.path("/single_product").search({product_id: product_id});
     }
 
     function bubbleSort(a) {
