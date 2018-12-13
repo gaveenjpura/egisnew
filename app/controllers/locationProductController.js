@@ -25,6 +25,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
+                $scope.products[i].remain_qty= $scope.products[i].qty- $scope.products[i].purchased_qty;
                 googleDirectionsService.getDirection($scope.products[i]);
             }
             setTimeout(function () {
@@ -50,6 +51,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
+                $scope.products[i].remain_qty= $scope.products[i].qty- $scope.products[i].purchased_qty;
                 googleDirectionsService.getDirection($scope.products[i]);
             }
             setTimeout(function () {
@@ -75,6 +77,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
+                $scope.products[i].remain_qty= $scope.products[i].qty- $scope.products[i].purchased_qty;
                 googleDirectionsService.getDirection($scope.products[i]);
             }
             setTimeout(function () {
@@ -100,6 +103,7 @@ app.controller('locationProductController', function ($scope, $location, locatio
             console.log($scope.products);
             for (var i = 0; i < $scope.products.length; ++i) {
                 $scope.products[i].image = "app/backend/" + $scope.products[i].image.substr(3);
+                $scope.products[i].remain_qty= $scope.products[i].qty- $scope.products[i].purchased_qty;
                 googleDirectionsService.getDirection($scope.products[i]);
             }
             setTimeout(function () {

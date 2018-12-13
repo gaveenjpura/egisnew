@@ -1,4 +1,4 @@
-app.service("sessionService", function ($timeout) {
+app.service("sessionService", function ($timeout,orderService) {
     this.user_id = "";
     this.user_type = "";
     this.lat = "";
@@ -36,6 +36,7 @@ app.service("sessionService", function ($timeout) {
         this.user_type = "";
         this.lat = "";
         this.lon = "";
+        orderService.clearOrder();
     }
     this.getUserCoordinates = function () {
         return {

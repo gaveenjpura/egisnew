@@ -58,10 +58,33 @@ app.directive('orderDirective', function ($rootScope) {
                 if (response.routes.length == 1) {
                     $rootScope.duration = response.routes[0].legs[0].duration.value;
                     $rootScope.$apply();
+
+                    directionsService2.route({
+                        origin: marker_2.position,
+                        destination: marker_3.position,
+                        avoidTolls: true,
+                        avoidHighways: false,
+                        travelMode: google.maps.TravelMode.DRIVING,
+                        provideRouteAlternatives: false
+                    }, function (response, status) {
+                        if (status == google.maps.DirectionsStatus.OK) {
+                            console.log(response.routes.length);
+                            directionsDisplay2.setDirections(response);
+                            directionsDisplay2.setRouteIndex(0);
+                        } else {
+                            window.alert('Directions request failed due to ' + status);
+                        }
+                        if (response.routes.length == 1) {
+                            $rootScope.duration = $rootScope.duration + response.routes[0].legs[0].duration.value;
+                            $rootScope.duration = ($rootScope.duration / 3600).toFixed(2);
+                            $rootScope.$apply();
+                            //$rootScope.setDistanceTime_1(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text);
+                        }
+                    });
                     //$rootScope.setDistanceTime_1(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text);
                 }
             });
-
+           /*
             directionsService2.route({
                 origin: marker_2.position,
                 destination: marker_3.position,
@@ -79,11 +102,12 @@ app.directive('orderDirective', function ($rootScope) {
                 }
                 if (response.routes.length == 1) {
                     $rootScope.duration = $rootScope.duration + response.routes[0].legs[0].duration.value;
-                    $rootScope.duration = ($rootScope.duration / 3600).toFixed(2);
+                    //$rootScope.duration = ($rootScope.duration / 3600).toFixed(2);
                     $rootScope.$apply();
                     //$rootScope.setDistanceTime_1(response.routes[0].legs[0].distance.text, response.routes[0].legs[0].duration.text);
                 }
             });
+            */
         }
     };
 });

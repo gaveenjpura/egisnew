@@ -49,6 +49,7 @@ app.controller("allProductController", function ($scope, categoryService, $locat
                 $scope.products=obj.data.records;
                 for(var i=0;i<$scope.products.length;++i){
                     $scope.products[i].image="app/backend/"+$scope.products[i].image.substr(3);
+                    $scope.products[i].remain_qty=$scope.products[i].qty-$scope.products[i].purchased_qty;
                 }
             });
         }

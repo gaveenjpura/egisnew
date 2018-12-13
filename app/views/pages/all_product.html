@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <h2 class="all_product_title" ng-show="all">All Products</h2>
-                <div class="adbox clearfix" ng-repeat="item in products">
+                <div class="adbox clearfix" ng-repeat="item in products" ng-show="item.remain_qty>0">
                     <div class="col-md-6">
                         <div class="image-container">
                             <img ng-src="{{item.image}}" class="img-responsive"/>
@@ -35,7 +35,7 @@
                         <h2>{{item.name}}</h2>
                         <h4>{{item.description}}</h4>
                         <h4>{{item.price}}/=</h4>
-                        <h4>{{item.qty}} items available</h4>
+                        <h4>{{item.remain_qty}} items available</h4>
                         <div>
                             <button class="btn btn-success view-product-btn" style="margin-top: 20px;" ng-click="viewProduct(item.product_id)">view product</button>
                         </div>

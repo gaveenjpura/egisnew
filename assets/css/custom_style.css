@@ -502,3 +502,41 @@ button {
 .single-product-page-main-container .single-product-page-secondary-container .cart-icon-container i {
     font-size: 200px;
 }
+
+.payment-gateway-main-container .payment-gateway-secondary-container .title-container {
+
+}
+
+.payment-gateway-main-container .payment-gateway-secondary-container .title-container .title {
+    font-size: 20px;
+    margin-top: 20px;
+    display: block;
+}
+
+.payment-gateway-main-container .payment-gateway-secondary-container .visa-logo-container {
+    text-align: center;
+}
+
+.payment-gateway-main-container .payment-gateway-secondary-container .buttons-container {
+    text-align: center;
+}
+
+.payment-gateway-main-container .payment-gateway-secondary-container .buttons-container .submit-payment {
+    margin-bottom: 20px;
+}
+
+.payment-gateway-main-container .payment-gateway-secondary-container .table-container th {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.payment-gateway-main-container .payment-gateway-secondary-container .table-container td {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.payment-gateway-main-container .payment-gateway-secondary-container .table-container table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 30px;
+}

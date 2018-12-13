@@ -53,6 +53,9 @@ app.config(function($routeProvider,$locationProvider, $httpProvider) {
         .when('/location_product', {
             templateUrl: 'app/views/pages/location_product.html'
         })
+        .when('/payment_gateway', {
+            templateUrl: 'app/views/pages/payment_gateway.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
