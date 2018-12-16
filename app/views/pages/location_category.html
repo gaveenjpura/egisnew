@@ -9,7 +9,8 @@
                     <div class="ad-box-container clearfix">
                         <div class="col-md-2 focus-grid" style="margin-bottom: 15px;" ng-repeat="cat_item in gnd_cat">
                             <a>
-                                <div class="focus-border" ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,gnd_cat,cat_item.category_id,'gnd')">
+                                <div class="focus-border"
+                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,gnd_cat,cat_item.category_id,'gnd')">
                                     <div class="focus-layout">
                                         <div class="focus-image"><i ng-class="cat_item.category_icon"
                                                                     ng-style="{'background-color':cat_item.category_color}"></i>
@@ -26,7 +27,8 @@
                     <div class="ad-box-container clearfix">
                         <div class="col-md-2 focus-grid" style="margin-bottom: 15px;" ng-repeat="cat_item in dsd_cat">
                             <a>
-                                <div class="focus-border" ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,dsd_cat,cat_item.category_id,'dsd')">
+                                <div class="focus-border"
+                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,dsd_cat,cat_item.category_id,'dsd')">
                                     <div class="focus-layout">
                                         <div class="focus-image"><i ng-class="cat_item.category_icon"
                                                                     ng-style="{'background-color':cat_item.category_color}"></i>
@@ -43,7 +45,8 @@
                         <div class="col-md-2 focus-grid" style="margin-bottom: 15px;"
                              ng-repeat="cat_item in district_cat">
                             <a>
-                                <div class="focus-border" ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,district_cat,cat_item.category_id,'district')">
+                                <div class="focus-border"
+                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,district_cat,cat_item.category_id,'district')">
                                     <div class="focus-layout">
                                         <div class="focus-image"><i ng-class="cat_item.category_icon"
                                                                     ng-style="{'background-color':cat_item.category_color}"></i>
@@ -73,6 +76,74 @@
                         </div>
                     </div>
 
+                </div>
+                <div class="interested-categories-container">
+                    <h2 class="sub-title">Top Interested Categories in Your Location</h2>
+                    <h2 class="sub-sub-title" style="margin-top: 15px;">{{gnd_name}} Grama Niladhari Division</h2>
+                    <div class="ad-box-container clearfix">
+                        <div class="col-md-2 focus-grid" style="margin-bottom: 15px;" ng-repeat="item in interest_gnd">
+                            <a>
+                                <div class="focus-border"
+                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,gnd_cat,cat_item.category_id,'gnd')">
+                                    <div class="focus-layout">
+                                        <div class="focus-image"><i ng-class="item.category_icon"
+                                                                    ng-style="{'background-color':item.category_color}"></i>
+                                        </div>
+                                        <h4 class="clrchg">{{item.category_name}}</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <h2 class="sub-sub-title" style="margin-top: 15px;">{{dsd_name}} Divisional Secretariast
+                        Division</h2>
+                    <div class="ad-box-container clearfix">
+                        <div class="col-md-2 focus-grid" style="margin-bottom: 15px;" ng-repeat="item in interest_dsd">
+                            <a>
+                                <div class="focus-border"
+                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,dsd_cat,cat_item.category_id,'dsd')">
+                                    <div class="focus-layout">
+                                        <div class="focus-image"><i ng-class="item.category_icon"
+                                                                    ng-style="{'background-color':item.category_color}"></i>
+                                        </div>
+                                        <h4 class="clrchg">{{item.category_name}}</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <h2 class="sub-sub-title" style="margin-top: 15px;">{{district_name}} District</h2>
+                    <div class="ad-box-container clearfix">
+                        <div class="col-md-2 focus-grid" style="margin-bottom: 15px;" ng-repeat="item in interest_district">
+                            <a>
+                                <div class="focus-border"
+                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,dsd_cat,cat_item.category_id,'dsd')">
+                                    <div class="focus-layout">
+                                        <div class="focus-image"><i ng-class="item.category_icon"
+                                                                    ng-style="{'background-color':item.category_color}"></i>
+                                        </div>
+                                        <h4 class="clrchg">{{item.category_name}}</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <h2 class="sub-sub-title" style="margin-top: 15px;">{{province_name}} province</h2>
+                    <div class="ad-box-container clearfix">
+                        <div class="col-md-2 focus-grid" style="margin-bottom: 15px;" ng-repeat="item in interest_province">
+                            <a>
+                                <div class="focus-border"
+                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,dsd_cat,cat_item.category_id,'dsd')">
+                                    <div class="focus-layout">
+                                        <div class="focus-image"><i ng-class="item.category_icon"
+                                                                    ng-style="{'background-color':item.category_color}"></i>
+                                        </div>
+                                        <h4 class="clrchg">{{item.category_name}}</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -16,6 +16,7 @@ app.controller('paymentController', function ($scope, orderService, paymentServi
             for(var i=0;i<$scope.product_array.length;++i){
                 paymentService.addOrderDetails(order_id,$scope.product_array[i].product_id,$scope.product_array[i].qty,$scope.product_array[i].total_price).then(function(obj){
                     console.log(obj);
+                    alert("order placed successfully");
                 });
             }
         });
