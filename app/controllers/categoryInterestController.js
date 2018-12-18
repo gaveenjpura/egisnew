@@ -13,6 +13,10 @@ app.controller('categoryInterestController', function ($scope, locationGraphServ
     $scope.district_show = true;
     $scope.dsd_show = true;
     $scope.gnd_show = true;
+    $scope.goMapView = function () {
+        $location.search({});
+        $location.path('/interest_map_view');
+    }
     loadGraphs();
 
     function loadGraphs() {
@@ -142,6 +146,7 @@ app.controller('categoryInterestController', function ($scope, locationGraphServ
                     });
                 });
             });
+
         });
     }
 

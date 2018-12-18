@@ -59,6 +59,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/category_interest', {
             templateUrl: 'app/views/pages/category_interest.html'
         })
+        .when('/interest_map_view', {
+            templateUrl: 'app/views/pages/interest_map_view.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
