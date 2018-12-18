@@ -161,4 +161,19 @@ app.controller('locationProductController', function ($scope, $location, locatio
             province_id: $scope.province_id
         });
     }
+    $scope.goCategoryInterest = function () {
+        $location.search({});
+        $location.path("/category_interest").search({
+            category_id: $scope.category_id,
+            category_name: $scope.category_name,
+            gnd_id: $scope.gnd_id,
+            gnd_name: $scope.gnd_name,
+            dsd_id: $scope.dsd_id,
+            dsd_name: $scope.dsd_name,
+            district_id: $scope.district_id,
+            district_name: $scope.district_name,
+            province_id: $scope.province_id,
+            province_name: $scope.province_name
+        });
+    }
 });

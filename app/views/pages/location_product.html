@@ -4,7 +4,8 @@
             <div class="col-md-2">
                 <h4 class="all_category_title">Other Categories</h4>
                 <div class="focus-border focus-border-all-product" ng-repeat="cat_item in category"
-                     ng-hide="cat_item.category_name==category_name" ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,category,cat_item.category_id,category_type)">
+                     ng-hide="cat_item.category_name==category_name"
+                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,category,cat_item.category_id,category_type)">
                     <div class="focus-layout">
                         <div class="focus-image"><i ng-class="cat_item.category_icon"
                                                     ng-style="{'background-color':cat_item.category_color}"></i>
@@ -38,12 +39,16 @@
                         <h4>{{item.price}}/=</h4>
                         <h4>{{item.remain_qty}} items available</h4>
                         <div>
-                            <button class="btn btn-success view-product-btn" style="margin-top: 20px;" ng-click="viewProduct(item.id)">view product</button>
+                            <button class="btn btn-success view-product-btn" style="margin-top: 20px;"
+                                    ng-click="viewProduct(item.id)">view product
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <span style="color:blue;cursor:pointer;font-size: 18px;" ng-click="goCategoryInterest()">View Category Interest on Map</span>
+            </div>
         </div>
     </div>
 </div>

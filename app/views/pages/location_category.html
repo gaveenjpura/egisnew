@@ -84,7 +84,7 @@
                         <div class="col-md-2 focus-grid" style="margin-bottom: 15px;" ng-repeat="item in interest_gnd">
                             <a>
                                 <div class="focus-border"
-                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,gnd_cat,cat_item.category_id,'gnd')">
+                                     ng-click="goLocationProduct(item.category_name,item.category_icon,item.category_color,interest_gnd,item.category_id,'gnd')">
                                     <div class="focus-layout">
                                         <div class="focus-image"><i ng-class="item.category_icon"
                                                                     ng-style="{'background-color':item.category_color}"></i>
@@ -101,7 +101,7 @@
                         <div class="col-md-2 focus-grid" style="margin-bottom: 15px;" ng-repeat="item in interest_dsd">
                             <a>
                                 <div class="focus-border"
-                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,dsd_cat,cat_item.category_id,'dsd')">
+                                     ng-click="goLocationProduct(item.category_name,item.category_icon,item.category_color,interest_dsd,item.category_id,'dsd')">
                                     <div class="focus-layout">
                                         <div class="focus-image"><i ng-class="item.category_icon"
                                                                     ng-style="{'background-color':item.category_color}"></i>
@@ -117,7 +117,7 @@
                         <div class="col-md-2 focus-grid" style="margin-bottom: 15px;" ng-repeat="item in interest_district">
                             <a>
                                 <div class="focus-border"
-                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,dsd_cat,cat_item.category_id,'dsd')">
+                                     ng-click="goLocationProduct(item.category_name,item.category_icon,item.category_color,interest_district,item.category_id,'district')">
                                     <div class="focus-layout">
                                         <div class="focus-image"><i ng-class="item.category_icon"
                                                                     ng-style="{'background-color':item.category_color}"></i>
@@ -133,7 +133,7 @@
                         <div class="col-md-2 focus-grid" style="margin-bottom: 15px;" ng-repeat="item in interest_province">
                             <a>
                                 <div class="focus-border"
-                                     ng-click="goLocationProduct(cat_item.category_name,cat_item.category_icon,cat_item.category_color,dsd_cat,cat_item.category_id,'dsd')">
+                                     ng-click="goLocationProduct(item.category_name,item.category_icon,item.category_color,interest_province,item.category_id,'province')">
                                     <div class="focus-layout">
                                         <div class="focus-image"><i ng-class="item.category_icon"
                                                                     ng-style="{'background-color':item.category_color}"></i>

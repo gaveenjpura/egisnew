@@ -1,4 +1,4 @@
-app.config(function($routeProvider,$locationProvider, $httpProvider) {
+app.config(function ($routeProvider, $locationProvider, $httpProvider) {
 
     'use strict';
     $locationProvider.html5Mode({enabled: true});
@@ -55,6 +55,9 @@ app.config(function($routeProvider,$locationProvider, $httpProvider) {
         })
         .when('/payment_gateway', {
             templateUrl: 'app/views/pages/payment_gateway.html'
+        })
+        .when('/category_interest', {
+            templateUrl: 'app/views/pages/category_interest.html'
         })
         .otherwise({
             redirectTo: '/'

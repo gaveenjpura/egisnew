@@ -1,0 +1,43 @@
+<div class="category-interest-page-main-container" ng-controller="categoryInterestController">
+    <div class="container">
+        <div class="row">
+            <h2 style="text-align: center;">Graph-Map View of Category Interest</h2>
+            <div class="item-container clearfix">
+                <h3 ng-show="gnd_show">{{gnd_name}} Grama Niladhari Division</h3>
+                <div class="col-md-6">
+                    <zingchart id="myChart" zc-json="myJson_gnd" zc-height=500 zc-width=600 ng-show="gnd_show"></zingchart>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+            <div class="item-container clearfix">
+                <h3 ng-show="dsd_show">{{dsd_name}} Divisional Secreteriast Division</h3>
+                <div class="col-md-6">
+                    <zingchart id="myChart2" zc-json="myJson_dsd" zc-height=500 zc-width=600 ng-show="dsd_show"></zingchart>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+            <div class="item-container clearfix">
+                <h3 ng-show="district_show">{{district_name}} District</h3>
+                <div class="col-md-6">
+                    <zingchart id="myChart3" zc-json="myJson_district" zc-height=500 zc-width=600 ng-show="district_show"></zingchart>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+            <div class="item-container clearfix">
+                <h3 ng-show="province_show">{{province_name}} Province</h3>
+                <div class="col-md-6">
+                    <zingchart id="myChart4" zc-json="myJson_province" zc-height=500 zc-width=600 ng-show="province_show"></zingchart>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
