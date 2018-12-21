@@ -1,8 +1,69 @@
 <div class="interest-map-view" ng-controller="interestMapController">
     <div class="container">
         <div class="row">
-            <div class="map-container" style="margin-top: 30px;margin-bottom: 30px;">
-                <esri-map id="map" map-options="map.options"></esri-map>
+            <div class="title-container">
+                <h2 class="title">Map View - Category Interest</h2>
+            </div>
+            <div class="map-container clearfix" style="margin-top: 30px;margin-bottom: 30px;">
+                <div class="col-md-4">
+                    <div class="category-location-container">
+                        <div class="clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-6">
+                                <span>Category:</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Electronics</span>
+                            </div>
+                        </div>
+                        <div class="clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-6">
+                                <span>DSD:</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Madurawala</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="legend-container">
+                        <div style="padding-left: 15px;"><span
+                                style="font-size: 20px;color: red;display: block;margin-bottom: 15px;">Legend</span>
+                        </div>
+                        <div style="padding-left: 15px;"><span
+                                style="margin-bottom: 15px;font-size: 16px;display: block;">Category Interest Rate</span>
+                        </div>
+                        <div class="clearfix" style="margin-bottom:15px;">
+                            <div class="col-md-5">
+                                <span>Low</span>
+                            </div>
+                            <div class="col-md-7">
+                                <span style="display: block;height: 30px;background-color:rgb(205, 250, 218);"></span>
+                            </div>
+                        </div>
+                        <div class="clearfix" style="margin-bottom:15px;">
+                            <div class="col-md-5">
+                                <span>Moderated</span>
+                            </div>
+                            <div class="col-md-7">
+                                <span style="display: block;height: 30px;background-color:sandybrown;"></span>
+                            </div>
+                        </div>
+                        <div class="clearfix" style="margin-bottom:15px;">
+                            <div class="col-md-5">
+                                <span>High</span>
+                            </div>
+                            <div class="col-md-7">
+                                <span style="display: block;height: 30px;background-color:mediumpurple;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <esri-map id="map" map-options="map.options">
+                        <esri-feature-layer
+                                url="{{url}}" definition-expression="{{map.DefExpression}}">
+                        </esri-feature-layer>
+                    </esri-map>
+                </div>
             </div>
         </div>
     </div>

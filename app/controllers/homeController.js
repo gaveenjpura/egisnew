@@ -1,9 +1,9 @@
-app.controller('homeController', function ($scope, categoryService, $location, $uibModal, $rootScope, sessionService) {
+app.controller('homeController', function ($scope, categoryService, $location, $uibModal, $rootScope, sessionService, $location) {
     $scope.items = ['item1', 'item2', 'item3'];
     $scope.animationsEnabled = true;
     var $ctrl = this;
     $scope.open = function () {
-
+        $location.path("/top_location");
     }
     $scope.category = [];
     var category_name = [];
@@ -87,8 +87,13 @@ app.controller('homeController', function ($scope, categoryService, $location, $
     $scope.goSingleCategory = function () {
         $location.path("/single_category");
     }
-    $scope.goAllProductCategory = function (cat_id,cat_name,cat_image,cat_color) {
-        $location.path("/all_product/cat").search({category_id:cat_id,category_name:cat_name,category_image:cat_image,category_color:cat_color});
+    $scope.goAllProductCategory = function (cat_id, cat_name, cat_image, cat_color) {
+        $location.path("/all_product/cat").search({
+            category_id: cat_id,
+            category_name: cat_name,
+            category_image: cat_image,
+            category_color: cat_color
+        });
     }
     $scope.goAllProduct = function () {
         $location.path("/all_product/all");
@@ -97,15 +102,15 @@ app.controller('homeController', function ($scope, categoryService, $location, $
         $location.path("/single_product");
     }
     $scope.goLocationCategory = function () {
-        var user_id=sessionService.getUser();
-        if(!user_id) {
+        var user_id = sessionService.getUser();
+        if (!user_id) {
             alert("Please first login to system");
         }
         else {
-            if(sessionService.getType()=='buyer' || sessionService.getType()=='buyer_and_seller') {
+            if (sessionService.getType() == 'buyer' || sessionService.getType() == 'buyer_and_seller') {
                 $location.path("/location_category");
             }
-            else{
+            else {
                 alert("sellers are not permitted to access");
             }
         }

@@ -1,4 +1,4 @@
-app.controller('addProductController', function ($scope, categoryService, sessionService, productService, $uibModal) {
+app.controller('addProductController', function ($scope, categoryService, sessionService, productService, $uibModal,$location) {
     $scope.date_today = new Date();
     $scope.category = [];
     var category_name = [];
@@ -67,6 +67,8 @@ app.controller('addProductController', function ($scope, categoryService, sessio
         productService.addProduct($scope.product_name, $scope.product_description, $scope.product_price, $scope.product_qty, $scope.cat_type, $scope.last_date, $scope.display, user_id, $scope.date_today).then(function (obj) {
             console.log(obj);
             $scope.open();
+            $location.path("/top_location");
+
         });
     }
 

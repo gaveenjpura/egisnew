@@ -1,4 +1,4 @@
-app.controller('interestMapController', function ($scope) {
+app.controller('topLocationController',function($scope){
     $scope.map = {
         options: {
             basemap: 'satellite',

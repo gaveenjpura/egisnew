@@ -540,3 +540,37 @@ button {
     width: 100%;
     margin-top: 30px;
 }
+
+.top-location-category-page .title-container {
+    margin-bottom: 15px;
+}
+
+.top-location-category-page .map-container {
+    margin-bottom: 15px;
+}
+
+.top-location-category-page table th {
+    text-align: center;
+    font-size: 16px;
+}
+
+.top-location-category-page table td {
+    text-align: center;
+    font-size: 16px;
+}
+
+.top-location-category-page table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.top-location-category-page .button-container{
+    font-size: 16px;
+}
+.top-location-category-page .button-container p{
+    margin-bottom: 15px;
+}
+.top-location-category-page .button-container button{
+    margin-top: 15px;
+}

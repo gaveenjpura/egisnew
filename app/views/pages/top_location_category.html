@@ -1,0 +1,186 @@
+<div class="top-location-category-page" ng-controller="topLocationController">
+    <div class="container">
+        <div class="row">
+            <div class="title-container">
+                <h2 class="title">Map View - Area Classification Based on Category Interest</h2>
+            </div>
+            <div class="district-container clearfix">
+                <div class="col-md-4">
+                    <div class="category-location-container">
+                        <div class="clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-6">
+                                <span>Admin Boundary Type</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Districts</span>
+                            </div>
+                        </div>
+                        <div class="clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-6">
+                                <span>Category</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Electronics</span>
+                            </div>
+                        </div>
+                        <div class="legend-container">
+                            <div style="padding-left: 15px;"><span
+                                    style="font-size: 20px;color: red;display: block;margin-bottom: 15px;">Legend</span>
+                            </div>
+                            <div style="padding-left: 15px;"><span
+                                    style="margin-bottom: 15px;font-size: 16px;display: block;">District Classification Based on Category Interest</span>
+                            </div>
+                            <div class="clearfix" style="margin-bottom:15px;">
+                                <div class="col-md-5">
+                                    <span>High</span>
+                                </div>
+                                <div class="col-md-7">
+                                    <span style="display: block;height: 30px;background-color:rgb(205, 250, 218);"></span>
+                                </div>
+                            </div>
+                            <div class="clearfix" style="margin-bottom:15px;">
+                                <div class="col-md-5">
+                                    <span>Low</span>
+                                </div>
+                                <div class="col-md-7">
+                                    <span style="display: block;height: 30px;background-color:sandybrown;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="map-container">
+                        <esri-map id="map" map-options="map.options">
+                            <esri-feature-layer
+                                    url="{{url}}">
+                            </esri-feature-layer>
+                        </esri-map>
+                    </div>
+                </div>
+            </div>
+            <div class="district-suggetion-container clearfix">
+                <div class="col-md-5">
+                    <div>
+                        <h3 class="table-caption">High Interested Districts on Electronic Category</h3>
+                    </div>
+                    <div class="table-container">
+                        <table border="1">
+                            <tr>
+                                <th>No</th>
+                                <th>District</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Colombo</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Kalutara</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="button-container">
+                        <p>Click below button to add following product to location based featured products service</p>
+                        <div><span>Product Id: 23</span></div>
+                        <button class="btn btn-success btn-add-feature">ADD PRODUCT TO LOCATION BASED FEATURED
+                            PRODUCTS
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="district-container clearfix">
+                <div class="col-md-4">
+                    <div class="category-location-container">
+                        <div class="clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-6">
+                                <span>Admin Boundary Type</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Provinces</span>
+                            </div>
+                        </div>
+                        <div class="clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-6">
+                                <span>Category</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Electronics</span>
+                            </div>
+                        </div>
+                        <div class="legend-container">
+                            <div style="padding-left: 15px;"><span
+                                    style="font-size: 20px;color: red;display: block;margin-bottom: 15px;">Legend</span>
+                            </div>
+                            <div style="padding-left: 15px;"><span
+                                    style="margin-bottom: 15px;font-size: 16px;display: block;">District Classification Based on Category Interest</span>
+                            </div>
+                            <div class="clearfix" style="margin-bottom:15px;">
+                                <div class="col-md-5">
+                                    <span>High</span>
+                                </div>
+                                <div class="col-md-7">
+                                    <span style="display: block;height: 30px;background-color:rgb(205, 250, 218);"></span>
+                                </div>
+                            </div>
+                            <div class="clearfix" style="margin-bottom:15px;">
+                                <div class="col-md-5">
+                                    <span>Low</span>
+                                </div>
+                                <div class="col-md-7">
+                                    <span style="display: block;height: 30px;background-color:sandybrown;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="map-container">
+                        <esri-map id="map_province" map-options="map.options">
+                            <esri-feature-layer
+                                    url="{{url}}">
+                            </esri-feature-layer>
+                        </esri-map>
+                    </div>
+                </div>
+            </div>
+            <div class="district-suggetion-container clearfix">
+                <div class="col-md-5">
+                    <div>
+                        <h3 class="table-caption">High Interested Provinces on Electronic Category</h3>
+                    </div>
+                    <div class="table-container">
+                        <table border="1">
+                            <tr>
+                                <th>No</th>
+                                <th>Province</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Western</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Central</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="button-container">
+                        <p>Click below button to add following product to location based featured products service</p>
+                        <div><span>Product Id: 23</span></div>
+                        <button class="btn btn-success btn-add-feature">ADD PRODUCT TO LOCATION BASED FEATURED
+                            PRODUCTS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
