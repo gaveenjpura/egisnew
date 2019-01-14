@@ -1,4 +1,4 @@
-<div class="about_us_page">
+<div class="about_us_page" ng-controller="aboutUsController">
     <div class="container">
         <div class="row">
             <div class="about_container clearfix">
@@ -85,12 +85,76 @@
                         <p>
                             EGIS main office is located at Bambalapitiya,Colombo 04. Other branches of EGIS are located
                             at
-                            Kurunegala, Kandy, Galle, Ratnapura, Chilaw and Dambulla.
+                            Kurunegala, Kandy, Galle.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <map-canvas id="map"></map-canvas>
+                    <div>
+                        <map-canvas id="map"></map-canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="branch-division-container clearfix">
+                <div class="col-md-6">
+                    <div class="main-title">
+                        <h2>Service area divisions of branches</h2>
+                    </div>
+                    <div class="title-container">
+                        <span class="title">Legend</span>
+                    </div>
+                    <div class="legend">
+                        <div>
+                            <span>Service area divisions of branches</span>
+                        </div>
+                        <div class="symbol-container">
+                            <div class="item clearfix" style="margin-bottom: 10px;margin-top: 10px;">
+                                <div class="col-md-4">
+                                    <span style="display: block;border: 1px solid;background-color:rgb(232, 21, 21);height: 30px;"></span>
+                                </div>
+                                <div class="col-md-8">
+                                    <span>Kurunegala Division</span>
+                                </div>
+                            </div>
+
+                            <div class="item clearfix" style="margin-bottom: 10px;margin-top: 10px;">
+                                <div class="col-md-4">
+                                    <span style="display: block;border: 1px solid;background-color:rgb(40, 146, 199);height: 30px;"></span>
+                                </div>
+                                <div class="col-md-8">
+                                    <span>Colombo Division</span>
+                                </div>
+                            </div>
+
+                            <div class="item clearfix" style="margin-bottom: 10px;margin-top: 10px;">
+                                <div class="col-md-4">
+                                    <span style="display: block;border: 1px solid;background-color:rgb(191, 212, 138);height: 30px;"></span>
+                                </div>
+                                <div class="col-md-8">
+                                    <span>Kandy Division</span>
+                                </div>
+                            </div>
+
+                            <div class="item clearfix" style="margin-bottom: 10px;margin-top: 10px;">
+                                <div class="col-md-4">
+                                    <span style="display: block;border: 1px solid;background-color:rgb(252, 179, 68);height: 30px;"></span>
+                                </div>
+                                <div class="col-md-8">
+                                    <span>Galle Division</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="map-container" style="margin-top: 20px;margin-bottom: 20px;">
+                        <esri-map id="map2" map-options="map.options">
+                            <esri-feature-layer
+                                    url="{{url}}">
+                            </esri-feature-layer>
+                        </esri-map>
+                    </div>
                 </div>
             </div>
         </div>

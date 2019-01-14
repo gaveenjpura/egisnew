@@ -1,0 +1,164 @@
+<div class="good-tracking-page" ng-controller="goodTrackingController">
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                <div class="title-container">
+                    <h2 style="text-align: center;">Good Tracking Service</h2>
+                </div>
+                <div class="top-frame-container clearfix" style="padding-top: 50px;">
+                    <div class="col-md-4">
+                        <div class="item-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-9"><span>Delivery Id</span></div>
+                            <div class="col-md-3"><span>D102</span></div>
+                        </div>
+                        <div class="item-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-9"><span>Order Id</span></div>
+                            <div class="col-md-3"><span>OD102</span></div>
+                        </div>
+                        <div class="item-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-9"><span>Estimated Distance</span></div>
+                            <div class="col-md-3">{{distance_tracking}}</div>
+                        </div>
+                        <div class="item-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-9"><span>Estimated Travel Time</span></div>
+                            <div class="col-md-3">{{duration_tracking}}</div>
+                        </div>
+                        <div class="item-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-9"><span>Start Date</span></div>
+                            <div class="col-md-3"><span>2019-01-14</span></div>
+                        </div>
+                        <div class="item-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-9"><span>Start Time</span></div>
+                            <div class="col-md-3"><span>09:30</span></div>
+                        </div>
+                        <div class="item-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-9"><span>Estimated Arrival Date</span></div>
+                            <div class="col-md-3"><span>2019-01-14</span></div>
+                        </div>
+                        <div class="item-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-9"><span>Estimated Arrival Time</span></div>
+                            <div class="col-md-3"><span>15:14</span></div>
+                        </div>
+                        <div class="item-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-9"><span>Amended Arrival Time</span></div>
+                            <div class="col-md-3"><span>15:14</span></div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <order-directive id="map" location="obj"
+                                         style="margin-bottom: 20px;"></order-directive>
+                    </div>
+                </div>
+                <div class="bottom-frame-container clearfix">
+                    <h3>Current location of the delivery vehicle</h3>
+                    <table border="1" style="border-collapse: collapse;width: 100%;">
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Street No</th>
+                            <th>Route</th>
+                            <th>Town/Village</th>
+                            <th>GN Division</th>
+                            <th>DS Division</th>
+                            <th>District</th>
+                            <th>Province</th>
+                            <th>Branch Division</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <h3>Previous locations of the delivery vehicle</h3>
+                    <table border="1" style="border-collapse: collapse;width: 100%;">
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Street No</th>
+                            <th>Route</th>
+                            <th>Town/Village</th>
+                            <th>GN Division</th>
+                            <th>DS Division</th>
+                            <th>District</th>
+                            <th>Province</th>
+                            <th>Branch Division</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="button-container" style="text-align: center;">
+                    <button class="btn btn-success exit-btn" style="width: 200px;margin-bottom: 20px;margin-top: 20px;">
+                        EXIT
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

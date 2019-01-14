@@ -1,4 +1,4 @@
-app.controller('topLocationController',function($scope){
+app.controller('topLocationController', function ($scope) {
     $scope.map = {
         options: {
             basemap: 'satellite',
@@ -8,5 +8,6 @@ app.controller('topLocationController',function($scope){
         },
         DefExpression: 'objectid=269'
     };
-    $scope.url = "https://localhost:6443/arcgis/rest/services/dsd/dsd_service/FeatureServer/0";
+    $scope.url_dis = "https://localhost:6443/arcgis/rest/services/district_feature/district_feature/FeatureServer/0";
+    $scope.url_pro = "https://localhost:6443/arcgis/rest/services/province_feature/province_feature/FeatureServer/0";
 });

@@ -30,6 +30,22 @@
                         </button>
                         <order-directive id="map" location="obj" ng-if="show_map"
                                          style="margin-bottom: 20px;"></order-directive>
+                        <div class="legend-container" style="margin-bottom: 15px;">
+                            <div class="title-container">
+                                <span><b>Legend</b></span>
+                            </div>
+                            <div class="second-title-container" style="margin-bottom: 15px;">
+                                <span>Route Information</span>
+                            </div>
+                            <div class="item-container clearfix" style="margin-top: 8px;">
+                                <div class="col-md-4" style="height: 10px;background-color:blue;"></div>
+                                <div class="col-md-8"><span style="margin-top: -5px;display: block;">Seller's place to branch office</span></div>
+                            </div>
+                            <div class="item-container clearfix" style="margin-top: 8px;">
+                                <div class="col-md-4" style="height: 10px;background-color:red;"></div>
+                                <div class="col-md-8"><span style="margin-top: -5px;display: block;">Branch office to buyer's location</span></div>
+                            </div>
+                        </div>
                         <div class="col-md-8">
                             <span ng-if="show_map"
                                   style="font-size: 20px;">Estimated Travel Time of Product Delivery</span>

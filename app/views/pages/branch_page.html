@@ -14,6 +14,26 @@
                 <div class="image-container">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRkHHgoNJLR63qqJv8d-ywOTqvNK6v0a5a9I67F5DCqjqoh8oO"/>
                 </div>
+                <div class="division-map-container" style="margin-top: 15px;">
+                    <esri-map id="map2" map-options="map.options">
+                        <esri-feature-layer
+                                url="{{url}}" definition-expression="{{map.DefExpression}}">
+                        </esri-feature-layer>
+                    </esri-map>
+                </div>
+                <div class="legend-container">
+                    <div class="title-container">
+                        <span><b>Legend</b></span>
+                    </div>
+                    <div class="second-title-container" style="margin-bottom: 15px;">
+                        <span>Branch Division</span>
+                    </div>
+                    <div class="item-container clearfix" style="margin-top: 8px;">
+                        <div class="col-md-4" style="height: 10px;background-color:rgb(191, 212, 138);"></div>
+                        <div class="col-md-8"><span style="margin-top: -5px;display: block;">Branch Division Boundary</span></div>
+                    </div>
+                </div>
+
                 <div class="route-map-container">
                     <div class="title-container">
                         <h3>Shortest Route Between Residence and Branch Office</h3>
@@ -21,8 +41,25 @@
                     <div class="map-container">
                         <map-route id="map" location="obj" ng-if="show_map"></map-route>
                     </div>
+                    <div class="legend-container">
+                        <div class="title-container">
+                            <span><b>Legend</b></span>
+                        </div>
+                        <div class="second-title-container" style="margin-bottom: 15px;">
+                            <span>Route Type</span>
+                        </div>
+                        <div class="item-container clearfix" style="margin-top: 8px;">
+                            <div class="col-md-4" style="height: 10px;background-color:blue;"></div>
+                            <div class="col-md-8"><span style="margin-top: -5px;display: block;">Shortest Route</span></div>
+                        </div>
+                        <div class="item-container clearfix" style="margin-top: 8px;">
+                            <div class="col-md-4" style="height: 10px;background-color:gray;"></div>
+                            <div class="col-md-8"><span style="margin-top: -5px;display: block;">Alternative Routes</span></div>
+                        </div>
+                    </div>
                     <div class="button-container">
-                        <button class="btn btn-success" ng-click="click()">CLICK HERE TO SHOW TRAVEL DISTANCE AND TIME</button>
+                        <button class="btn btn-success" ng-click="click()">CLICK HERE TO SHOW TRAVEL DISTANCE AND TIME
+                        </button>
                     </div>
                     <h2 ng-show="show_dis">Distance and Travel Time of Fastest Route</h2>
                     <div class="distance-container clearfix" ng-show="show_dis">

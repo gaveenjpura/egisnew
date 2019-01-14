@@ -60,4 +60,14 @@ app.controller('branchPageController', function ($scope, $rootScope, branchServi
         $scope.distance_alt_2 = $rootScope.distance_alt_2;
         $scope.time_alt_2 = $rootScope.time_alt_2;
     }
+    $scope.map = {
+        options: {
+            basemap: 'satellite',
+            center: [80.7733, 7.0008],
+            zoom: 8,
+            sliderStyle: 'small'
+        },
+        DefExpression: 'objectid=1'
+    };
+    $scope.url = "https://localhost:6443/arcgis/rest/services/branch/branch/FeatureServer/0";
 });

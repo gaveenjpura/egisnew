@@ -50,12 +50,12 @@ app.directive('mapRoute', function ($rootScope) {
             }, function (response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     console.log(response.routes.length);
-                    directionsDisplay.setDirections(response);
-                    directionsDisplay.setRouteIndex(0);
                     directionsDisplayAlternative1.setDirections(response);
                     directionsDisplayAlternative1.setRouteIndex(1);
                     directionsDisplayAlternative2.setDirections(response);
                     directionsDisplayAlternative2.setRouteIndex(2);
+                    directionsDisplay.setDirections(response);
+                    directionsDisplay.setRouteIndex(0);
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
