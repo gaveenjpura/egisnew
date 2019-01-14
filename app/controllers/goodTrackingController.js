@@ -3,10 +3,14 @@ app.controller('goodTrackingController', function ($scope, $rootScope) {
     $scope.blon = '79.8593';
     $scope.ulat = '7.086337343325419';
     $scope.ulon = '80.76599393025754';
+    $scope.current_lat = '6.986634';
+    $scope.current_lon = '79.935376';
     $scope.obj = {
         blat: $scope.ulat,
         blon: $scope.ulon,
         ulat: $scope.blat,
-        ulon: $scope.blon
+        ulon: $scope.blon,
+        current_lat: $scope.current_lat,
+        current_lon: $scope.current_lon
     };
 });
