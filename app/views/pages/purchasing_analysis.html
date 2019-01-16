@@ -1,0 +1,105 @@
+<div class="purchasing_analysis" ng-controller="purchasingAnalysisController">
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                <div class="title-container">
+                    <h2 style="text-align: center;">Location Based Purchasing Income Analysis</h2>
+                </div>
+                <div class="form-container clearfix">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="branch-container clearfix" style="margin-top: 15px;margin-bottom: 15px;">
+                            <div class="col-md-3">
+                                <span style="font-size:20px;">Branch</span>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option>Colombo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="date-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-3">
+                                <span style="font-size:20px;">From Date</span>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="date" class="form-control" placeholder="From Date">
+                            </div>
+                        </div>
+                        <div class="date-container clearfix" style="margin-bottom: 15px;">
+                            <div class="col-md-3">
+                                <span style="font-size:20px;">To Date</span>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="date" class="form-control" placeholder="To Date">
+                            </div>
+                        </div>
+                        <div class="button-container" style="margin-bottom: 15px;margin-left: 15px;">
+                            <button class="btn btn-success submit-btn">PERFORM ANALYSIS</button>
+                        </div>
+                        <div class="map-container clearfix" style="margin-bottom: 20px;margin-top: 20px;">
+                            <div class="col-md-4">
+                                <div class="legend-container">
+                                    <div style="padding-left: 15px;"><span
+                                            style="font-size: 20px;color: red;display: block;margin-bottom: 15px;">Legend</span>
+                                    </div>
+                                    <div style="padding-left: 15px;"><span
+                                            style="margin-bottom: 15px;font-size: 16px;display: block;">Income (RS)</span>
+                                    </div>
+                                    <div class="clearfix" style="margin-bottom:15px;">
+                                        <div class="col-md-5">
+                                            <span>100000-150000</span>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <span style="display: block;height: 30px;background-color:rgb(232, 16, 20);"></span>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix" style="margin-bottom:15px;">
+                                        <div class="col-md-5">
+                                            <span>70000-100000</span>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <span style="display: block;height: 30px;background-color:rgb(40, 146, 199);"></span>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix" style="margin-bottom:15px;">
+                                        <div class="col-md-5">
+                                            <span>45000-70000</span>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <span style="display: block;height: 30px;background-color:rgb(160, 194, 155);"></span>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix" style="margin-bottom:15px;">
+                                        <div class="col-md-5">
+                                            <span>20000-45000</span>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <span style="display: block;height: 30px;background-color:rgb(250, 250, 100);"></span>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix" style="margin-bottom:15px;">
+                                        <div class="col-md-5">
+                                            <span>4000-20000</span>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <span style="display: block;height: 30px;background-color:rgb(250, 141, 52);"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8" style="border: 1px solid black;">
+                                <esri-map id="map_province" map-options="map.options" style="height: 500px;">
+                                    <esri-feature-layer
+                                            url="{{url_pro}}" style="height: 500px;">
+                                    </esri-feature-layer>
+                                </esri-map>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,7 +3,7 @@ app.controller('homeController', function ($scope, categoryService, $location, $
     $scope.animationsEnabled = true;
     var $ctrl = this;
     $scope.open = function () {
-        $location.path("/good_tracking");
+        $location.path("/purchasing_analysis");
     }
     $scope.category = [];
     var category_name = [];

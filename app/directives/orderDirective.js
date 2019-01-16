@@ -20,7 +20,7 @@ app.directive('orderDirective', function ($rootScope) {
             });
             marker_2.setMap(map);
             var icon = {
-                url: "https://www.robotwoods.com/dev/misc/bluecircle.png"
+                url: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png"
             };
             var marker_3 = new google.maps.Marker({
                 position: new google.maps.LatLng(scope.location.current_lat, scope.location.current_lon),
