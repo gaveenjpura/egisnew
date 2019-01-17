@@ -1,0 +1,119 @@
+<div class="marketing-page" ng-controller="marketingController">
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                <div class="title-container">
+                    <h2 style="text-align: center;">Location Based Marketing</h2>
+                    <h2 style="text-align: center;">New Users Enrollment Promotion Campaign via Email</h2>
+                </div>
+                <div class="form-container clearfix">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="branch-container clearfix" style="margin-top: 15px;margin-bottom: 15px;">
+                            <div class="col-md-7">
+                                <span style="font-size:20px;">Primary Administrative Division Type</span>
+                            </div>
+                            <div class="col-md-5">
+                                <select class="form-control">
+                                    <option>District</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="branch-container clearfix" style="margin-top: 15px;margin-bottom: 15px;">
+                            <div class="col-md-7">
+                                <span style="font-size:20px;">Secondary Administrative Division Type</span>
+                            </div>
+                            <div class="col-md-5">
+                                <select class="form-control">
+                                    <option>DS Division</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="branch-container clearfix" style="margin-top: 15px;margin-bottom: 15px;">
+                            <div class="col-md-7">
+                                <span style="font-size:20px;">Primary Administrative Division Value</span>
+                            </div>
+                            <div class="col-md-5">
+                                <select class="form-control">
+                                    <option>Colombo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="button-container" style="margin-bottom: 15px;margin-left: 15px;">
+                            <button class="btn btn-success submit-btn">DISPLAY RESULT</button>
+                        </div>
+                        <div class="map-container clearfix" style="margin-bottom: 20px;margin-top: 20px;">
+                            <div class="col-md-4">
+                                <div class="legend-container">
+                                    <div style="padding-left: 15px;"><span
+                                            style="font-size: 20px;color: red;display: block;margin-bottom: 15px;">Legend</span>
+                                    </div>
+                                    <div style="padding-left: 15px;"><span
+                                            style="margin-bottom: 15px;font-size: 16px;display: block;">Divisions</span>
+                                    </div>
+                                    <div class="clearfix" style="margin-bottom:15px;">
+                                        <div class="col-md-5">
+                                            <span>Target Divisions</span>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <span style="display: block;height: 30px;background-color:rgb(255, 0, 0);"></span>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix" style="margin-bottom:15px;">
+                                        <div class="col-md-5">
+                                            <span>Non Target Divisions</span>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <span style="display: block;height: 30px;background-color:rgb(214, 133, 137);"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8" style="border: 1px solid black;">
+                                <esri-map id="map_province" map-options="map.options" style="height: 500px;">
+                                    <esri-feature-layer
+                                            url="{{url_pro}}" style="height: 500px;">
+                                    </esri-feature-layer>
+                                </esri-map>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table border="1" style="border-collapse: collapse;width: 100%;">
+                                <tr>
+                                    <th>Target Division</th>
+                                    <th>No of Emails</th>
+                                </tr>
+                                <tr>
+                                    <td>Seethawaka</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td>Padukka</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>Kaduwela</td>
+                                    <td>150</td>
+                                </tr>
+                                <tr>
+                                    <td>Kesbewa</td>
+                                    <td>230</td>
+                                </tr>
+                                <tr>
+                                    <td>Homagama</td>
+                                    <td>110</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="button-container" style="margin-top: 20px;margin-bottom: 20px;">
+                            <button class="btn btn-success send-btn">
+                                SEND EMAILS
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

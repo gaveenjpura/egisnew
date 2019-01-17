@@ -71,6 +71,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/purchasing_analysis', {
             templateUrl: 'app/views/pages/purchasing_analysis.html'
         })
+        .when('/marketing', {
+            templateUrl: 'app/views/pages/marketing.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
